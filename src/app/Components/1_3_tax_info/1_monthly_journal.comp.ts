@@ -18,7 +18,7 @@ declare var $: any;
   styleUrls: ['../../Styles/1_3_1_monthly_journal.css'],
 })
 
-export class _3_1_MonthlyJournalComponent extends ComponentWithAccount implements OnInit {
+export class MonthlyJournalComponent extends ComponentWithAccount implements OnInit {
   private menuIdx = 2;
   private subMenuIdx = 0;
 
@@ -163,7 +163,7 @@ export class _3_1_MonthlyJournalComponent extends ComponentWithAccount implement
   }
 
   addSchedule() {
-    if (this.contentToUpload.trim() == '') {
+    if (this.contentToUpload.trim() === '') {
       alert('내용을 입력해주세요.');
       return;
     }

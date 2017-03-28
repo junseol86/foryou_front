@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
   styleUrls: ['../../Styles/1_1_2_members.css'],
 })
 
-export class _1_2_MembersComponent implements OnInit {
+export class  MembersComponent  implements OnInit {
 
   private menuIdx:number = 0;
   private subMenuIdx:number = 1;

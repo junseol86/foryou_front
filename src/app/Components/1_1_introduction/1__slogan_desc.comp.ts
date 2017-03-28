@@ -18,7 +18,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['../../Styles/1_1_1_greeting.css'],
   inputs:['selectedInitial']
 })
-export class _1_1__SloganDescComponent implements OnInit {
+export class SloganDescComponent implements OnInit {
   selectedInitial:number = 0;
 
 

@@ -21,9 +21,9 @@ var router_1 = require('@angular/router');
 var menu_service_1 = require("../../Services/menu.service");
 var monthly_journal_service_1 = require("../../Services/monthly_journal.service");
 var component_with_account_1 = require("../component_with_account");
-var _3_1_MonthlyJournalComponent = (function (_super) {
-    __extends(_3_1_MonthlyJournalComponent, _super);
-    function _3_1_MonthlyJournalComponent(router, activatedRoute, menuService, monthlyJournalService) {
+var MonthlyJournalComponent = (function (_super) {
+    __extends(MonthlyJournalComponent, _super);
+    function MonthlyJournalComponent(router, activatedRoute, menuService, monthlyJournalService) {
         _super.call(this);
         this.router = router;
         this.activatedRoute = activatedRoute;
@@ -36,10 +36,10 @@ var _3_1_MonthlyJournalComponent = (function (_super) {
         this.schedules = [];
         this.contentToUpload = '';
     }
-    _3_1_MonthlyJournalComponent.prototype.setContentUpload = function (content) {
+    MonthlyJournalComponent.prototype.setContentUpload = function (content) {
         this.contentToUpload = content;
     };
-    _3_1_MonthlyJournalComponent.prototype.ngOnInit = function () {
+    MonthlyJournalComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.todayDate = this.date.getDate();
         this.todayMonth = this.date.getMonth() + 1;
@@ -62,12 +62,12 @@ var _3_1_MonthlyJournalComponent = (function (_super) {
             _this.getSchedules();
         });
     };
-    _3_1_MonthlyJournalComponent.prototype.clearDays = function () {
+    MonthlyJournalComponent.prototype.clearDays = function () {
         this.lastMonthDays = [];
         this.thisMonthDays = [];
         this.nextMonthDays = [];
     };
-    _3_1_MonthlyJournalComponent.prototype.nextMonth = function () {
+    MonthlyJournalComponent.prototype.nextMonth = function () {
         this.clearDays();
         var yearToGo;
         var monthToGo;
@@ -83,7 +83,7 @@ var _3_1_MonthlyJournalComponent = (function (_super) {
         }
         this.router.navigate(['/' + this.menuService.menus[this.menuIdx].link + '/' + this.menuService.menus[this.menuIdx].sub_menus[this.subMenuIdx].link + '/' + yearToGo + '/' + monthToGo], { replaceUrl: true });
     };
-    _3_1_MonthlyJournalComponent.prototype.prevMonth = function () {
+    MonthlyJournalComponent.prototype.prevMonth = function () {
         this.clearDays();
         var yearToGo;
         var monthToGo;
@@ -99,12 +99,12 @@ var _3_1_MonthlyJournalComponent = (function (_super) {
         }
         this.router.navigate(['/' + this.menuService.menus[this.menuIdx].link + '/' + this.menuService.menus[this.menuIdx].sub_menus[this.subMenuIdx].link + '/' + yearToGo + '/' + monthToGo], { replaceUrl: true });
     };
-    _3_1_MonthlyJournalComponent.prototype.getSchedules = function () {
+    MonthlyJournalComponent.prototype.getSchedules = function () {
         var _this = this;
         this.monthlyJournalService.getSchedules(this.thisYear, this.thisMonth)
             .then(function (schedules) { return _this.afterGetSchedules(schedules); });
     };
-    _3_1_MonthlyJournalComponent.prototype.afterGetSchedules = function (schedules) {
+    MonthlyJournalComponent.prototype.afterGetSchedules = function (schedules) {
         this.schedules = [];
         for (var i = 0; i < 31; i++) {
             this.schedules.push([]);
@@ -114,15 +114,15 @@ var _3_1_MonthlyJournalComponent = (function (_super) {
             this.schedules[schedule['monthly_journal.date']].push(schedule);
         }
     };
-    _3_1_MonthlyJournalComponent.prototype.showModifyPopup = function (date) {
+    MonthlyJournalComponent.prototype.showModifyPopup = function (date) {
         this.dateToModify = date;
         this.contentToUpload = '';
         this.popupOn = true;
     };
-    _3_1_MonthlyJournalComponent.prototype.closeModifyPopup = function () {
+    MonthlyJournalComponent.prototype.closeModifyPopup = function () {
         this.popupOn = false;
     };
-    _3_1_MonthlyJournalComponent.prototype.addSchedule = function () {
+    MonthlyJournalComponent.prototype.addSchedule = function () {
         var _this = this;
         if (this.contentToUpload.trim() == '') {
             alert('내용을 입력해주세요.');
@@ -135,7 +135,7 @@ var _3_1_MonthlyJournalComponent = (function (_super) {
         this.monthlyJournalService.addSchedule(this.thisYear, this.thisMonth, this.dateToModify, this.contentToUpload, this.login_result.selector, this.login_result.validator)
             .then(function (result) { return _this.afterAddSchedule(result); });
     };
-    _3_1_MonthlyJournalComponent.prototype.afterAddSchedule = function (result) {
+    MonthlyJournalComponent.prototype.afterAddSchedule = function (result) {
         if (result['success'] != true) {
             alert('오류가 발생했습니다.  다시 시도해 주세요.');
             return;
@@ -143,16 +143,16 @@ var _3_1_MonthlyJournalComponent = (function (_super) {
         this.schedules[this.dateToModify] = result['schedules'];
         this.contentToUpload = '';
     };
-    _3_1_MonthlyJournalComponent = __decorate([
+    MonthlyJournalComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'monthly_journal',
             templateUrl: '1_monthly_journal.comp.html',
             styleUrls: ['../../Styles/1_3_1_monthly_journal.css'],
-        }), 
+        }),
         __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, menu_service_1.MenuService, monthly_journal_service_1.MonthlyJournalService])
-    ], _3_1_MonthlyJournalComponent);
-    return _3_1_MonthlyJournalComponent;
+    ], MonthlyJournalComponent);
+    return MonthlyJournalComponent;
 }(component_with_account_1.ComponentWithAccount));
-exports._3_1_MonthlyJournalComponent = _3_1_MonthlyJournalComponent;
+exports.MonthlyJournalComponent = MonthlyJournalComponent;
 //# sourceMappingURL=1_monthly_journal.comp.js.map

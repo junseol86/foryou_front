@@ -11,7 +11,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['../../Styles/1_1_2_members.css'],
   inputs:['popupOn', 'personId']
 })
-export class _1_2__MembersPopupComponent implements OnInit {
+export class MembersPopupComponent implements OnInit {
 
   windowHeight:number = 0;
   popupLeft: number = 0;

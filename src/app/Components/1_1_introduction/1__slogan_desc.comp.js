@@ -12,8 +12,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var _1_1__SloganDescComponent = (function () {
-    function _1_1__SloganDescComponent() {
+var SloganDescComponent = (function () {
+    function SloganDescComponent() {
         this.selectedInitial = 0;
         this.slogan_descs = [
             {
@@ -48,19 +48,19 @@ var _1_1__SloganDescComponent = (function () {
             }
         ];
     }
-    _1_1__SloganDescComponent.prototype.ngOnInit = function () {
+    SloganDescComponent.prototype.ngOnInit = function () {
     };
-    _1_1__SloganDescComponent = __decorate([
+    SloganDescComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'slogan_desc',
             template: "\n    <div #slogan_desc id=\"slogan_desc\" class=\"_c_align\">\n      <p>\n        <span id=\"english\">{{slogan_descs[selectedInitial]['english']}}</span> : <span id=\"korean\">{{slogan_descs[selectedInitial]['korean']}}</span>\n      </p>\n      <div id=\"desc\">{{slogan_descs[selectedInitial]['desc']}}</div>\n    </div>\n  ",
             styleUrls: ['../../Styles/1_1_1_greeting.css'],
             inputs: ['selectedInitial']
-        }), 
+        }),
         __metadata('design:paramtypes', [])
-    ], _1_1__SloganDescComponent);
-    return _1_1__SloganDescComponent;
+    ], SloganDescComponent);
+    return SloganDescComponent;
 }());
-exports._1_1__SloganDescComponent = _1_1__SloganDescComponent;
+exports.SloganDescComponent = SloganDescComponent;
 //# sourceMappingURL=1__slogan_desc.comp.js.map

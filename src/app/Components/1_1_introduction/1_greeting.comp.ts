@@ -11,7 +11,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['../../Styles/1_1_1_greeting.css'],
 })
 
-export class _1_1_GreetingComponent implements OnInit{
+export class GreetingComponent implements OnInit{
 
   private menuIdx:number = 0;
   private subMenuIdx:number = 0;

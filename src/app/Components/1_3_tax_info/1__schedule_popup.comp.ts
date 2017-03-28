@@ -37,7 +37,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['../../Styles/1_3_1_monthly_journal.css'],
   inputs: ['popupOn']
 })
-export class _1_3__SchedulePopupComponent implements OnInit {
+export class SchedulePopupComponent implements OnInit {
 
   popupOn: number;
   windowHeight:number = 0;

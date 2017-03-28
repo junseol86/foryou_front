@@ -12,35 +12,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var _1_2__MembersPopupComponent = (function () {
-    function _1_2__MembersPopupComponent() {
+var MembersPopupComponent = (function () {
+    function MembersPopupComponent() {
         this.windowHeight = 0;
         this.popupLeft = 0;
         this.popupOnOut = new core_1.EventEmitter();
     }
-    _1_2__MembersPopupComponent.prototype.hidePopup = function () {
+    MembersPopupComponent.prototype.hidePopup = function () {
         this.popupOn = false;
         this.popupOnOut.emit(false);
     };
-    _1_2__MembersPopupComponent.prototype.ngOnInit = function () {
+    MembersPopupComponent.prototype.ngOnInit = function () {
         this.windowHeight = window.innerHeight;
         this.popupLeft = (window.innerWidth - 1070) / 2;
     };
     __decorate([
-        core_1.Output(), 
+        core_1.Output(),
         __metadata('design:type', Object)
-    ], _1_2__MembersPopupComponent.prototype, "popupOnOut", void 0);
-    _1_2__MembersPopupComponent = __decorate([
+    ], MembersPopupComponent.prototype, "popupOnOut", void 0);
+    MembersPopupComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'members_popup',
             templateUrl: '2__members_popup.comp.html',
             styleUrls: ['../../Styles/1_1_2_members.css'],
             inputs: ['popupOn', 'personId']
-        }), 
+        }),
         __metadata('design:paramtypes', [])
-    ], _1_2__MembersPopupComponent);
-    return _1_2__MembersPopupComponent;
+    ], MembersPopupComponent);
+    return MembersPopupComponent;
 }());
-exports._1_2__MembersPopupComponent = _1_2__MembersPopupComponent;
+exports.MembersPopupComponent = MembersPopupComponent;
 //# sourceMappingURL=2__members_popup.comp.js.map

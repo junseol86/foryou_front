@@ -12,28 +12,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var _1_1_GreetingComponent = (function () {
-    function _1_1_GreetingComponent() {
+var GreetingComponent = (function () {
+    function GreetingComponent() {
         this.menuIdx = 0;
         this.subMenuIdx = 0;
         this.slogan_initials = ['F', 'O', 'R', 'Y', 'O', 'U'];
     }
-    _1_1_GreetingComponent.prototype.ngOnInit = function () {
+    GreetingComponent.prototype.ngOnInit = function () {
         this.selectedInitial = 0;
     };
-    _1_1_GreetingComponent.prototype.set_slogan = function (idx) {
+    GreetingComponent.prototype.set_slogan = function (idx) {
         this.selectedInitial = idx;
     };
-    _1_1_GreetingComponent = __decorate([
+    GreetingComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'greeting',
             templateUrl: '1_greeting.comp.html',
             styleUrls: ['../../Styles/1_1_1_greeting.css'],
-        }), 
+        }),
         __metadata('design:paramtypes', [])
-    ], _1_1_GreetingComponent);
-    return _1_1_GreetingComponent;
+    ], GreetingComponent);
+    return GreetingComponent;
 }());
-exports._1_1_GreetingComponent = _1_1_GreetingComponent;
+exports.GreetingComponent = GreetingComponent;
 //# sourceMappingURL=1_greeting.comp.js.map
