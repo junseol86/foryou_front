@@ -1,0 +1,28 @@
+<top></top>
+
+<div id="content" class="on_page_center pos_rel">
+  <left_wing></left_wing>
+  <right_wing></right_wing>
+
+  <sub_menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></sub_menu>
+
+  <div class="_c_align">
+    <img src="/app/Images/interface/intro_logo.png">
+  </div>
+
+  <div id="slogan_letters">
+    <span *ngFor="let initial of slogan_initials; let i = index;" ngClass="{{selectedInitial == i ? '-on' : ''}}" (mouseenter)="set_slogan(i)">{{initial}}</span>
+  </div>
+  <slogan_desc [selectedInitial]="selectedInitial"></slogan_desc>
+
+  <div id="quote" class="_c_align">
+    <i class="fa fa-quote-left fa-2x" aria-hidden="true"></i><br><br>
+    세금도 누구에게나 어김없이 찾아옵니다.<br><br>
+    세무는 여러분이 운영하시는<br>비즈니스의 한 부분입니다.<br><br>
+    저희 <span>세무법인 포유</span>에서는<br>항상 고객을 최우선의 가치로 생각하고<br>행동하는 동반자가 되어 함께 하겠습니다.<br><br>
+    <i class="fa fa-quote-right fa-2x" aria-hidden="true"></i>
+  </div>
+
+  <footer></footer>
+</div>
+

@@ -1,0 +1,45 @@
+$theme_color: #342f81;
+$top_bg: #333333;
+$top_dark_gray: #222222;
+
+div, span {
+  font-family: "Malgun Gothic", Dotum;
+}
+
+.on_page_center {
+  width: 980px;
+  margin: 0 auto;
+  min-height: 1000px;
+}
+
+.pos_rel {
+  position: relative;
+}
+
+._float_con {
+  overflow: hidden;
+  > * {
+    float: left;
+  }
+  > .fl_r {
+    float: right;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+._c_align {
+  text-align: center;
+}
+
+._pointer {
+  cursor: pointer;
+}
+
+#content {
+  border-left: 2px solid #efefef;
+  border-right: 2px solid #efefef;
+  padding: 36px;
+}
+

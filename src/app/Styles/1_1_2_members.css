@@ -1,0 +1,108 @@
+div, span {
+  font-family: "Malgun Gothic", Dotum; }
+
+.on_page_center {
+  width: 980px;
+  margin: 0 auto;
+  min-height: 1000px; }
+
+.pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con > .fl_r {
+    float: right; }
+  ._float_con:after {
+    clear: both; }
+
+._c_align {
+  text-align: center; }
+
+._pointer {
+  cursor: pointer; }
+
+#content {
+  border-left: 2px solid #efefef;
+  border-right: 2px solid #efefef;
+  padding: 36px; }
+
+#members_container {
+  width: 100%;
+  overflow: hidden; }
+  #members_container > div {
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    background-color: #fafafa;
+    width: 310px;
+    height: 400px;
+    margin: 0 21px 21px 0; }
+    #members_container > div:nth-child(3n+3) {
+      margin-right: 0; }
+    #members_container > div:hover {
+      background-color: white; }
+    #members_container > div .branch_name {
+      margin: 20px;
+      font-size: 1.2em;
+      color: #342f81; }
+      #members_container > div .branch_name i {
+        margin-right: 6px;
+        color: #342f81;
+        opacity: 0.5; }
+    #members_container > div .personnel {
+      text-align: center;
+      cursor: pointer; }
+      #members_container > div .personnel .position {
+        color: #bfbfbf;
+        font-weight: bold; }
+      #members_container > div .personnel .name {
+        font-size: 1.2em; }
+      #members_container > div .personnel .pic {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #eaeaea;
+        margin: 32px auto 8px;
+        border-radius: 44px;
+        background-color: white;
+        background-size: 100px 100px; }
+      #members_container > div .personnel:hover .position {
+        color: #342f81; }
+      #members_container > div .personnel:hover .name {
+        font-weight: bold; }
+
+#popup {
+  position: fixed;
+  top: 0px;
+  width: 816px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  padding: 120px; }
+  #popup.-on {
+    display: block; }
+  #popup > div {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #444444;
+    border-radius: 6px;
+    color: white;
+    padding: 48px;
+    line-height: 1.6em; }
+    #popup > div ul {
+      margin: 4px 0 0 0; }
+    #popup > div .position {
+      opacity: 0.5;
+      font-size: 1.5em; }
+    #popup > div .name {
+      margin-left: 8px;
+      font-size: 2em;
+      font-weight: bold; }
+    #popup > div .subtitle {
+      opacity: 0.5;
+      font-size: 1.2em;
+      font-weight: bold; }
+    #popup > div span.item {
+      font-weight: bold;
+      opacity: 0.5; }
+
+/*# sourceMappingURL=1_1_2_members.css.map */

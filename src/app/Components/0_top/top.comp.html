@@ -1,0 +1,18 @@
+<div class="top">
+  <div class="on_page_center pos_rel">
+    <img class="_pointer" src="/app/Images/interface/0_top_logo.png" (click)="navigateTo('dashboard')">
+    <div id="buttons_container" class="_float_con">
+      <div *ngFor="let menu of menus">
+        <div *ngIf="menu.sub_menus != null">
+          <span>{{menu.name}}</span>
+          <div>
+            <div *ngFor="let sub_menu of menu.sub_menus" (click)="navigateTo(menu.link + '/' + sub_menu.link)">{{sub_menu.name}}</div>
+          </div>
+        </div>
+        <div *ngIf="menu.sub_menus == null" class="no_sub">
+          <span>{{menu.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

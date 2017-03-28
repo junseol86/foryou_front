@@ -1,0 +1,70 @@
+<top></top>
+
+<div id="content" class="on_page_center pos_rel">
+  <left_wing></left_wing>
+  <right_wing></right_wing>
+
+  <sub_menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></sub_menu>
+
+  <div id="calandar_title">
+    <i class="fa fa-arrow-left" aria-hidden="true" (click)="prevMonth()"></i>
+    {{thisYear}}년 {{thisMonth}}월
+    <i class="fa fa-arrow-right" aria-hidden="true" (click)="nextMonth()"></i>
+  </div>
+
+  <div id="weekdays" class="_float_con">
+    <div>일</div>
+    <div>월</div>
+    <div>화</div>
+    <div>수</div>
+    <div>목</div>
+    <div>금</div>
+    <div>토</div>
+  </div>
+  <div id="days" class="_float_con">
+    <div class="last_month" *ngFor="let day of lastMonthDays">
+      <div class="date">{{day}}</div>
+    </div>
+    <div class="this_month" *ngFor="let day of thisMonthDays">
+      <div class="date {{(thisMonth == todayMonth && day == todayDate) ? 'today' : ''}}">{{day}}</div>
+      <div class="schedules" *ngIf="schedules.length > 0">
+        <div class="schedule {{(thisMonth < todayMonth || thisMonth == todayMonth && schedule['monthly_journal.date'] < todayDate) ? 'past' : ''}}"
+             *ngFor="let schedule of schedules[day]">
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+          {{schedule['monthly_journal.content']}}
+        </div>
+      </div>
+      <div class="modify_btn" (click)="showModifyPopup(day)" *ngIf="login_status == LOGGED_IN">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="next_month" *ngFor="let day of nextMonthDays">
+      <div class="date">{{day}}</div>
+    </div>
+
+  </div>
+
+  <div id="popup">
+    <div id="modify_schedule">
+      <div id="title">
+        {{thisYear}}년 {{thisMonth}}월 {{dateToModify}}일
+        <div class="close" (click)="closeModifyPopup()"><i class="fa fa-times" aria-hidden="true"></i></div>
+      </div>
+      <div id="schedules" *ngIf="dateToModify != undefined">
+        <div class="schedule" *ngFor="let schedule of schedules[dateToModify]">
+          {{schedule['monthly_journal.content']}}
+          <div class="delete"><i class="fa fa-times" aria-hidden="true"></i></div>
+        </div>
+      </div>
+      <div id="insert">
+        <input #content type="text" maxlength="20" value="{{contentToUpload}}" (change)="setContentUpload(content.value)">
+        <div id="enter" (click)="addSchedule()">
+          <i class="fa fa-upload" aria-hidden="true"></i>
+          올리기
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></footer>
+</div>

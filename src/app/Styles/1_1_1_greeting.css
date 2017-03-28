@@ -1,0 +1,80 @@
+div, span {
+  font-family: "Malgun Gothic", Dotum; }
+
+.on_page_center {
+  width: 980px;
+  margin: 0 auto;
+  min-height: 1000px; }
+
+.pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con > .fl_r {
+    float: right; }
+  ._float_con:after {
+    clear: both; }
+
+._c_align {
+  text-align: center; }
+
+._pointer {
+  cursor: pointer; }
+
+#content {
+  border-left: 2px solid #efefef;
+  border-right: 2px solid #efefef;
+  padding: 36px; }
+
+#slogan_letters {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 6em; }
+  #slogan_letters > span {
+    color: #dedede;
+    cursor: pointer;
+    letter-spacing: 6px;
+    font-weight: bold; }
+    #slogan_letters > span.-on {
+      color: #342f81;
+      border-bottom: 4px solid #342f81; }
+    #slogan_letters > span.space {
+      margin-right: 36px; }
+    #slogan_letters > span:nth-child(3) {
+      margin-right: 20px; }
+
+#slogan_desc {
+  margin-top: 32px; }
+  #slogan_desc p::first-letter {
+    font-weight: bold;
+    font-size: 1.5em; }
+  #slogan_desc p span#english {
+    font-size: 1.5em;
+    font-family: 'Georgia', 'Times New Roman';
+    font-style: italic; }
+  #slogan_desc p span#korean {
+    color: #bfbfbf; }
+  #slogan_desc div {
+    margin-top: 11px;
+    font-size: 1.2em;
+    color: #808080; }
+
+#quote {
+  margin: 100px auto auto;
+  padding: 32px 24px;
+  color: #ababab;
+  background-color: #333333;
+  width: 400px;
+  font-family: "Malgun Gothic";
+  font-size: 1.2em;
+  line-height: 1.6em; }
+  #quote span {
+    color: white;
+    font-weight: bold; }
+  #quote i {
+    opacity: 0.2; }
+
+/*# sourceMappingURL=1_1_1_greeting.css.map */

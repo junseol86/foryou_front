@@ -1,0 +1,20 @@
+<div id="footer">
+  세무법인 포유 포항지점 | 대표자명: 윤진석, 송철한 | 주소: [791-130] 경북 포항시 북구 중앙로 342-1(덕수동) 3F<br>
+  TEL: 054)241-2442 | FAX: 054)241-2443 | EMAIL: yjs0207@naver.com | Copyright All rights reserved<br>
+  <br>
+  <span *ngIf="login_status==NOT_LOGGED_IN" (click)="show_login_interface()" id="login_btn">
+    <i class="fa fa-key" aria-hidden="true"></i>
+    관리자 로그인
+  </span>
+  <span *ngIf="login_status==LOGGING_IN">
+    ID:
+    <input #userId type="text" (keyup)="setUserId(userId.value)">
+    PW:
+    <input #password type="password" (keyup)="setPassword(password.value)">
+    <span class="button" (click)="login()">확인</span>
+    <span (click)="this.cancel_logging_in()" class="button">취소</span>
+  </span>
+  <span *ngIf="login_status==LOGGED_IN">
+    <span class="button" (click)="logout()">로그아웃</span>
+  </span>
+</div>

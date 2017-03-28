@@ -1,0 +1,66 @@
+@import 'common';
+
+#slogan_letters {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 6em;
+  & > span {
+    color: #dedede;
+    cursor: pointer;
+    letter-spacing: 6px;
+    font-weight: bold;
+    &.-on {
+      color: $theme_color;
+      border-bottom: 4px solid $theme_color;
+    }
+    &.space {
+      margin-right: 36px;
+    }
+    &:nth-child(3) {
+      margin-right: 20px;
+    }
+  }
+}
+
+#slogan_desc {
+  margin-top: 32px;
+  & p {
+    &::first-letter {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    & span {
+      &#english {
+        font-size: 1.5em;
+        font-family: 'Georgia', 'Times New Roman';
+        font-style: italic;
+      }
+      &#korean {
+        color: #bfbfbf;
+      }
+    }
+  }
+  & div {
+    margin-top: 11px;
+    font-size: 1.2em;
+    color: #808080;
+  }
+}
+
+#quote {
+  margin: 100px auto auto;
+  padding: 32px 24px;
+  color: #ababab;
+  background-color: #333333;
+  width: 400px;
+  font-family: "Malgun Gothic";
+  font-size: 1.2em;
+  line-height: 1.6em;
+  & span {
+    color: white;
+    font-weight: bold;
+  }
+  & i {
+    opacity: 0.2;
+  }
+}

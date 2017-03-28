@@ -1,0 +1,84 @@
+@import 'common';
+
+#left_wing {
+  position: absolute;
+  top: 64px;
+  left: -120px;
+  width: 80px;
+  height: 240px;
+  & > div {
+    cursor: pointer;
+    margin-bottom: 30px;
+    & > img {
+      opacity: 0.3;
+    }
+    &:hover > img {
+      opacity: 1;
+    }
+    & > div {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+#right_wing {
+  position: absolute;
+  top: 64px;
+  right: -180px;
+  width: 160px;
+  height: 240px;
+  & > div {
+    width: 100%;
+    height: 64px;
+    background-size: 100% 128px;
+    cursor: pointer;
+    opacity: 0.4;
+    &:hover {
+      background-position-y: 64px;
+      opacity: 1;
+    }
+  }
+}
+
+#sub_menus {
+  margin-bottom: 36px;
+  &  span {
+    padding: 6px 20px;
+    border-bottom: 2px solid #eaeaea;
+    cursor: pointer;
+    &.-on {
+      border-bottom: 2px solid $theme_color;
+    }
+  }
+}
+
+#footer {
+  font-size: 0.85em;
+  color: #ababab;
+  margin-top: 100px;
+  text-align: center;
+
+  & > span {
+    font-size: 1.2em;
+    color: #808080;
+
+    &#login_btn {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    & input {
+      width: 80px;
+      margin-right: 8px;
+    }
+    & .button {
+      margin-right: 4px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

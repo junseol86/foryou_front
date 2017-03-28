@@ -1,0 +1,107 @@
+@import 'common';
+
+#members_container {
+  width: 100%;
+  overflow: hidden;
+  & > div {
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    background-color: #fafafa;
+    width: 310px;
+    height: 400px;
+    margin: 0 21px 21px 0;
+
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: white;
+    }
+
+    & .branch_name {
+      margin: 20px;
+      font-size: 1.2em;
+      color: $theme_color;
+      & i {
+        margin-right: 6px;
+        color: $theme_color;
+        opacity: 0.5;
+      }
+    }
+
+    & .personnel {
+      text-align: center;
+      cursor: pointer;
+      & .position {
+        color: #bfbfbf;
+        font-weight: bold;
+      }
+      & .name {
+        font-size: 1.2em;
+      }
+      & .pic {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #eaeaea;
+        margin: 32px auto 8px;
+        border-radius: 44px;
+        background-color: white;
+        background-size: 100px 100px;
+      }
+
+      &:hover {
+        & .position {
+          color: $theme_color;
+        }
+        & .name {
+          font-weight: bold;
+        }
+      }
+    }
+
+  }
+}
+
+#popup {
+  position: fixed;
+  top: 0px;
+  width: 816px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  &.-on {
+    display: block;
+  }
+  padding: 120px;
+
+  & > div {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #444444;
+    border-radius: 6px;
+    color: white;
+    padding: 48px;
+    line-height: 1.6em;
+
+    & ul {
+      margin: 4px 0 0 0;
+    }
+
+    & .position {
+      opacity: 0.5;
+      font-size: 1.5em;
+    }
+    & .name {
+      margin-left: 8px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    & .subtitle {
+      opacity: 0.5;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    & span.item {
+      font-weight: bold;
+      opacity: 0.5;
+    }
+  }
+}

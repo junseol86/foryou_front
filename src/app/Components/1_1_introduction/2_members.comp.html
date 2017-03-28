@@ -1,0 +1,25 @@
+<top></top>
+
+<div id="content" class="on_page_center pos_rel">
+  <left_wing></left_wing>
+  <right_wing></right_wing>
+
+  <sub_menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></sub_menu>
+
+  <div id="members_container" class="_float_con">
+    <div *ngFor="let branch of branches">
+      <div class="branch_name"><i class="fa fa-map-marker" aria-hidden="true"></i>{{branch.name}}</div>
+      <div *ngFor="let person of branch.personnel" class="personnel" id="yi-kwang-woo" (click)="showMemberPopup(person.id)">
+        <div class="pic" [ngStyle]="{'background-image': 'url(' + person.pic + ')'}"></div>
+        <span class="position">{{person.position}}</span>
+        <span class="name">{{person.name}}</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <members_popup [popupOn]="popupOn" [personId]="personId" (popupOnOut)="hidePopup()"></members_popup>
+
+  <footer></footer>
+</div>

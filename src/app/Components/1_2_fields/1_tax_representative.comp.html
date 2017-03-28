@@ -1,0 +1,57 @@
+<top></top>
+
+<div id="content" class="on_page_center pos_rel">
+  <left_wing></left_wing>
+  <right_wing></right_wing>
+
+  <sub_menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></sub_menu>
+
+  <div id="field_desc">
+    <i class="fa fa-check-square-o" aria-hidden="true"></i> 개인 및 법인의 장부작성 및 재무재표 작성
+    <br>
+    <i class="fa fa-check-square-o" aria-hidden="true"></i> 법인세, 소득세, 부가가치세 신고
+  </div>
+
+  <div id="search" class="pos_rel">
+    <input type="text"/>
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <div id="admin_write">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      관리자 글쓰기
+    </div>
+  </div>
+  <div id="articles_container" class="_float_con">
+    <div id="articles_col_0">
+
+    </div>
+    <div id="articles_col_1">
+    </div>
+    <div id="articles_col_2">
+    </div>
+    <div id="articles_col_3">
+    </div>
+    <div id="temp_col">
+      <div class="article" *ngFor="let article of articles">
+        <div class="date">
+          {{article['date']}}
+        </div>
+        <div class="title">
+          {{article['title']}}
+        </div>
+        <div class="tag" *ngFor="let tag of article['tagsArray']"><i class="fa fa-tag" aria-hidden="true"></i> {{tag}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pages">
+    <div class="-on">1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+  </div>
+
+  <footer></footer>
+</div>

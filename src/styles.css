@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+div, span {
+  font-family: "Malgun Gothic", Dotum; }
+
+.on_page_center {
+  width: 980px;
+  margin: 0 auto;
+  min-height: 1000px; }
+
+.pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+._float_con > * {
+  float: left; }
+._float_con > .fl_r {
+  float: right; }
+._float_con:after {
+  clear: both; }
+
+._c_align {
+  text-align: center; }
+
+._pointer {
+  cursor: pointer; }
+
+#content {
+  border-left: 2px solid #efefef;
+  border-right: 2px solid #efefef;
+  padding: 36px; }
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  color: #333333; }
+
+.outer_wrapper {
+  min-width: 1380px; }
+
+/*# sourceMappingURL=0_app.css.map */

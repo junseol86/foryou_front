@@ -1,0 +1,21 @@
+* {
+  font-family: 'SansSerif', 'Malgun Gothic','Dotum'; }
+
+.on_page_center {
+  width: 980px;
+  margin: 0 auto;
+  min-height: 1000px; }
+
+.pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con > .fl_r {
+    float: right; }
+  ._float_con:after {
+    clear: both; }
+
+/*# sourceMappingURL=common.css.map */

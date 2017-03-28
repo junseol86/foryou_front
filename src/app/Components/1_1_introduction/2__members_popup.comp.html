@@ -1,0 +1,167 @@
+<div id="popup" ngClass="{{popupOn ? '-on' : ''}}" (click)="hidePopup()"
+     [ngStyle]="{'height':windowHeight + 'px', 'left': popupLeft + 'px'}"
+>
+  <div>
+    <div class="profile" *ngIf="personId == 'yi-kwang-woo'">
+      <div>
+        <span class="position">대표이사 / 세무사</span>
+        <span class="name">이광우</span>
+      </div>
+      <br>
+      <br>
+      <div class="subtitle">주요경력</div>
+      <ul>
+        <li>마포·영월·경주 세무서장</li>
+        <li>서울지방국세청 조사1국 3과장, 조사 4국 4과장</li>
+        <li>국세청 조사국, 국제조세국 근무</li>
+        <li>중부·대구지방 국세청 조사국 근무</li>
+      </ul>
+      <br>
+      (우) 04111 서울시 마포구 서강대길 3 서강빌딩 2층<br>
+      <span class="item">TEL</span> 02-3274-1500&nbsp;&nbsp;&nbsp;&nbsp;<span class="item">FAX</span> 02-713-7676<br>
+      <span class="item">H.P</span> 010-8111-2500<br>
+      <span class="item">E-mail</span> kwolee@hanmail.net
+    </div>
+
+    <div class="profile" *ngIf="personId == 'cho-ki-yong'">
+      <div>
+        <span class="position">회장 / 세무사</span>
+        <span class="name">조기용</span>
+      </div>
+      <br>
+      <br>
+      <div class="subtitle">학력사항</div>
+      <ul>
+        <li>고려대학교 컴퓨터 정보통신대학원</li>
+      </ul>
+      <br>
+      <div class="subtitle">경력사항</div>
+      <ul>
+        <li>성북ㆍ제천세무서장</li>
+        <li>국무총리실 과장</li>
+        <li>성남(분당)세무서 납세자보호담당관</li>
+        <li>국세청 조사국ㆍ재산세국ㆍ국제조세국</li>
+        <li>서울지방국세청 조사국ㆍ중부지방국세청 조사국</li>
+        <li>강남ㆍ서초ㆍ성남(분당) 세무서 등 근무</li>
+      </ul>
+      <br>
+      <div class="subtitle">주요활동</div>
+      <ul>
+        <li>
+          [現] (주)파리크라상, 희성촉매(주), 국제약품공업(주), (주)경신 등 고문세무사
+        </li>
+        <li>
+          [前] 삼성전기(주), (주)오뚜기, (주)풍산, (주)리바트, (주)한화건설, 코오롱환경서비스(주) 등 고문세무사
+        </li>
+      </ul>
+      <br>
+      경기도 성남시 분당구 판교역로 178, 702호 (삼평동, 서건타워)<br>
+      <span class="item">전화</span> 031-608-9400&nbsp;&nbsp;&nbsp;&nbsp;<span class="item">팩스</span> 031-608-9404 H.P 010-9633-8888
+    </div>
+
+    <div class="profile" *ngIf="personId == 'jung-jin-yong'">
+      <div>
+        <span class="position">세무사</span>
+        <span class="name">정진용</span>
+      </div>
+      <br>
+      <br>
+      <div class="subtitle">학력사항</div>
+      <ul>
+        <li>고려대학교 컴퓨터 정보통신대학원</li>
+      </ul>
+      <br>
+      <div class="subtitle">경력사항</div>
+      <ul>
+        <li>국세청 법인세과, 송파ㆍ양천ㆍ서초세무서 법인세과 근무</li>
+        <li>서울지방국세청 조사1국, 서초세무서 조사과 근무</li>
+        <li>성북세무서 재산세과 근무</li>
+      </ul>
+    </div>
+
+    <div class="profile" *ngIf="personId == 'yi-cheon-gil'">
+      <div>
+        <span class="position">세무사</span>
+        <span class="name">이천길</span>
+      </div>
+      <br>
+      <br>
+      <div class="subtitle">주요경력</div>
+      <ul>
+        <li>명예퇴직(2013.6.30, 부이사관)</li>
+        <li>화성세무서 초대서장(2012.4.3)</li>
+        <li>중부지방국세청 조사1국 1과장(2010.12.30, 법인정기조사 총괄)</li>
+        <li>중부지방국세청 조사2국 관리과장(2010.6.30, 개인·양도·상속증여 조사 총괄)</li>
+        <li>동울산세무서장(2009.12.30)</li>
+        <li>서울지방국세청 조사4국 서기관(2005.8월, 특별조사 총괄)</li>
+        <li>역삼세무서 법인세과장(2003.8월)</li>
+        <li>국세청 조사국 사무관(2001.8월, 양도소득세·부동산투기조사 총괄)</li>
+        <li>동수원세무서 법인세과장(2000.1월)</li>
+      </ul>
+      <br>
+      <div class="subtitle">주요경력</div>
+      <ul>
+        <li>2000년 9월 대통령표창,  2003년 2월 근정포장,  2013년 6월 녹조근정훈장</li>
+        <li>2013년 12월 31일 홍조근정훈장</li>
+      </ul>
+    </div>
+
+    <div class="profile" *ngIf="personId == 'yi-tae-ya'">
+      <div>
+        <span class="position">세무사</span>
+        <span class="name">이태야</span>
+      </div>
+      <br>
+      <br>
+      <div class="subtitle">주요경력</div>
+      <ul>
+        <li>여성세무사회 회장</li>
+        <li>계명대학 경영학박사</li>
+        <li>계명대학 법학박사</li>
+        <li>동국대 경주 겸임교수</li>
+        <li>경상북도 지방세 심의위원</li>
+      </ul>
+      <br>
+      경상북도 경주시 원화로 340 대경빌딩<br>
+      <span class="item">TEL</span> 054-771-2991&nbsp;&nbsp;&nbsp;&nbsp;<span class="item">FAX</span> 054-743-5353
+    </div>
+
+    <div class="profile" *ngIf="personId == 'kim-hyeon-seok'">
+      <div>
+        <span class="position">세무사</span>
+        <span class="name">김현석</span>
+      </div>
+    </div>
+
+    <div class="profile" *ngIf="personId == 'song-cheol-han'">
+      <div>
+        <span class="position">세무사</span>
+        <span class="name">송철한</span>
+      </div>
+      <br>
+      <br>
+      <div class="subtitle">약력</div>
+      <ul>
+        <li>대구지방세무사회 감리위원</li>
+        <li>선린대학 세무회계정보과 강사</li>
+      </ul>
+    </div>
+
+    <div class="profile" *ngIf="personId == 'yoon-jin-seok'">
+      <div>
+        <span class="position">세무사</span>
+        <span class="name">윤진석</span>
+      </div>
+      <br>
+      <br>
+      <div class="subtitle">약력</div>
+      <ul>
+        <li>대구지방세무사회 조세제도 연구위원</li>
+        <li>포항테크노파크 입주기업 자문세무사</li>
+        <li>포항시 마을세무사 상담위원</li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,8 @@
+<div id="sub_menus">
+  <div *ngIf="menus[menuIdx].sub_menus != null">
+    <span *ngFor="let sub_menu of menus[menuIdx].sub_menus; let i = index" [attr.class]="subMenuIdx == i ? '-on' : null" (click)="navigateTo(menus[menuIdx].link + '/' + sub_menu.link)">
+      {{sub_menu.name}}
+    </span>
+  </div>
+
+</div>
