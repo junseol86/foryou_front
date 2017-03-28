@@ -67,12 +67,12 @@ export class MenuService {
       link: 'online_consulting',
       sub_menus: [
         {
-          name: '자주 묻는 질문',
-          link: '/faq'
+          name: '상담신청',
+          link: '/consulting_apply'
         },
         {
-          name: '질문과 답변',
-          link: '/qna'
+          name: '자주 묻는 질문',
+          link: '/faq'
         }
         ]
     },

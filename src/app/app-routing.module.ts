@@ -11,9 +11,11 @@ import { DashboardComponent } from './Components/1_0_dashboard/dashboard.comp';
 import { MenuService } from './Services/menu.service';
 import { GreetingComponent } from './Components/1_1_introduction/1_greeting.comp';
 import { MembersComponent } from './Components/1_1_introduction/2_members.comp';
-import {TaxRepresentativeComponent} from './Components/1_2_fields/1_tax_representative.comp';
-import {MockService} from './Services/mock.service';
-import {MonthlyJournalComponent} from './Components/1_3_tax_info/1_monthly_journal.comp';
+import { TaxRepresentativeComponent } from './Components/1_2_fields/1_tax_representative.comp';
+import { MockService} from './Services/mock.service';
+import { MonthlyJournalComponent } from './Components/1_3_tax_info/1_monthly_journal.comp';
+import { ConsultingApplyComponent } from './Components/1_4_online_consulting/1_consulting_apply.comp';
+import { FaqComponent } from './Components/1_4_online_consulting/2_faq.comp';
 
 
 
@@ -26,7 +28,10 @@ const routes: Routes = [
   { path: 'fields/tax_representative/:search/:page',  component: TaxRepresentativeComponent },
   { path: 'tax_info/monthly_journal',
     redirectTo: 'tax_info/monthly_journal/' + new Date().getFullYear() + '/' + (Number(new Date().getMonth()) + 1), pathMatch: 'full' },
-  { path: 'tax_info/monthly_journal/:year/:month',  component: MonthlyJournalComponent }
+  { path: 'tax_info/monthly_journal/:year/:month',  component: MonthlyJournalComponent },
+  { path: 'online_consulting/consulting_apply', redirectTo: 'online_consulting/consulting_apply/@/1' },
+  { path: 'online_consulting/consulting_apply/:search/:page', component: ConsultingApplyComponent },
+  { path: 'online_consulting/faq',  component: FaqComponent },
   ];
 
 @NgModule({

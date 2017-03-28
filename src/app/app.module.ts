@@ -5,17 +5,19 @@ import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { TopComponent } from './Components/0_top/top.comp'
-import { LeftComponent } from './Components/0_accessories/left.comp'
-import { RightComponent } from './Components/0_accessories/right.comp'
-import { FooterComponent } from './Components/0_accessories/footer.comp'
-import { SubMenuComponent } from './Components/0_accessories/sub_menu.comp'
+import { TopComponent } from './Components/0_top/top.comp';
+import { LeftComponent } from './Components/0_accessories/left.comp';
+import { RightComponent } from './Components/0_accessories/right.comp';
+import { FooterComponent } from './Components/0_accessories/footer.comp';
+import { SubMenuComponent } from './Components/0_accessories/sub_menu.comp';
 
-import { DashboardComponent } from './Components/1_0_dashboard/dashboard.comp'
+import { DashboardComponent } from './Components/1_0_dashboard/dashboard.comp';
 import { GreetingComponent } from './Components/1_1_introduction/1_greeting.comp';
 import { MembersComponent } from './Components/1_1_introduction/2_members.comp';
 import { TaxRepresentativeComponent } from './Components/1_2_fields/1_tax_representative.comp';
 import { MonthlyJournalComponent } from './Components/1_3_tax_info/1_monthly_journal.comp';
+import { ConsultingApplyComponent } from './Components/1_4_online_consulting/1_consulting_apply.comp';
+import { FaqComponent } from './Components/1_4_online_consulting/2_faq.comp';
 
 import { AccountService } from './Services/account.service';
 import { MonthlyJournalService } from './Services/monthly_journal.service';
@@ -38,6 +40,8 @@ import { SchedulePopupComponent } from './Components/1_3_tax_info/1__schedule_po
     TaxRepresentativeComponent,
     MonthlyJournalComponent,
     SchedulePopupComponent,
+    ConsultingApplyComponent,
+    FaqComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [AccountService, MonthlyJournalService,

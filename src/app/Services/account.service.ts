@@ -11,13 +11,13 @@ import {ValueService} from "./values.service";
 @Injectable()
 export class AccountService {
 
+  headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  options = new RequestOptions({ headers: this.headers });
+
   constructor(
     private http: Http,
     private values: ValueService
   ) { }
-
-  headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-  options = new RequestOptions({ headers: this.headers });
 
   login(user_id: String, password: String): Promise<LoginResult> {
     const url =  this.values.backendAddress + '/login';
@@ -29,7 +29,7 @@ export class AccountService {
 
   autoLogin(selector: String, validator: String): Promise<LoginResult> {
     const url =  this.values.backendAddress + '/autologin';
-    return this.http.post(url, `selector=${selector}&validator=${validator}`, this.options)
+    return this.http.put(url, `selector=${selector}&validator=${validator}`, this.options)
       .toPromise()
       .then(response => response.json().data as LoginResult)
       .catch(this.handleError);

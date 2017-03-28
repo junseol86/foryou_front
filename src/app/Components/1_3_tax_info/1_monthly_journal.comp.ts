@@ -162,7 +162,7 @@ export class MonthlyJournalComponent extends ComponentWithAccount implements OnI
     $('#popup').css('display', 'none');
   }
 
-  addSchedule() {
+  addASchedule() {
     if (this.contentToUpload.trim() === '') {
       alert('내용을 입력해주세요.');
       return;
@@ -173,12 +173,20 @@ export class MonthlyJournalComponent extends ComponentWithAccount implements OnI
       return;
     }
 
-    this.monthlyJournalService.addSchedule(
+    this.monthlyJournalService.addASchedule(
       this.thisYear, this.thisMonth, this.dateToModify, this.contentToUpload,
       this.login_result.selector, this.login_result.validator)
-      .then(result => this.afterAddSchedule(result));
+      .then(result => this.afterAddOrDeleteASchedule(result));
   }
-  afterAddSchedule(result: Object) {
+
+  deleteASchedule(id: number) {
+    this.monthlyJournalService.deleteASchedule(
+      this.thisYear, this.thisMonth, this.dateToModify, id,
+      this.login_result.selector, this.login_result.validator)
+      .then(result => this.afterAddOrDeleteASchedule(result));
+  }
+
+  afterAddOrDeleteASchedule(result: Object) {
     if (result['success'] !== true) {
       alert('오류가 발생했습니다.  다시 시도해 주세요.');
       return;
