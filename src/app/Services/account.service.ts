@@ -1,12 +1,12 @@
 /**
  * Created by Hyeonmin on 2017-03-21.
  */
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import {Headers, Http, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import {LoginResult} from "../Models/Account";
-import {ValueService} from "./values.service";
+import {LoginResult} from '../Models/Account';
+import {ValueService} from './values.service';
 
 @Injectable()
 export class AccountService {
@@ -32,6 +32,14 @@ export class AccountService {
     return this.http.put(url, `selector=${selector}&validator=${validator}`, this.options)
       .toPromise()
       .then(response => response.json().data as LoginResult)
+      .catch(this.handleError);
+  }
+
+  authenticate(selector: String, validator: String): Promise<Object> {
+    const url =  this.values.backendAddress + '/authenticate';
+    return this.http.put(url, `selector=${selector}&validator=${validator}`, this.options)
+      .toPromise()
+      .then(response => response.json().data)
       .catch(this.handleError);
   }
 

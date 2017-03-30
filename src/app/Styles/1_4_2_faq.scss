@@ -1,0 +1,120 @@
+@import 'common';
+
+#for_admin {
+  & #admin_write {
+    color: #808080;
+    line-height: 24px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 4px 6px;
+    cursor: pointer;
+    display: inline-block;
+    &:hover {
+      background-color: #fafafa;
+    }
+  }
+  & #write_area {
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    width: 450px;
+    padding: 20px;
+    margin-top: 12px;
+    & > #create_or_modify {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    & > div {
+      padding: 0 8px 0 56px;
+      & > textarea {
+        width: 100%;
+      }
+      & > label {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+    & #buttons {
+      text-align: right;
+      padding-right: 0;
+      & > div {
+        color: #808080;
+        line-height: 24px;
+        border: 1px solid #eaeaea;
+        border-radius: 4px;
+        padding: 4px 6px;
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 4px;
+        &:hover {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+  margin-bottom: 24px;
+}
+
+#articles_container {
+  & .column {
+    width: 313px;
+    margin-right: 20px;
+    &#articles_col_2 {
+      margin-right: 0;
+    }
+    & .article {
+      border: 1px solid #efefef;
+      padding: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      &:hover {
+        background-color: #fafafa;
+      }
+      & .header {
+        margin-bottom: 12px;
+        & div {
+          color: $theme_color;
+          opacity: 0.67;
+          font-size: 1.2em;
+        }
+        & span {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 0.9em;
+          opacity: 0.5;
+        }
+      }
+      & .answer {
+        padding-top: 20px;
+        margin-top: 20px;
+        border-top: 1px solid #efefef;
+        color: $theme_color;
+        display: none;
+      }
+      & .for_admin {
+        margin-top: 8px;
+        text-align: right;
+        & > span {
+          margin-left: 6px;
+          opacity: 0.5;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      &.-on {
+        border: 1px dashed $theme_color;
+        &:hover {
+          background-color: inherit;
+        }
+        & .question {
+          opacity: 0.5;
+        }
+        & .answer {
+          display: block;
+        }
+      }
+    }
+  }
+}

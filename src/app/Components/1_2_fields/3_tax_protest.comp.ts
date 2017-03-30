@@ -9,15 +9,15 @@ import {Router} from "@angular/router";
 
 @Component({
   moduleId: module.id,
-  selector: 'app-tax-representative',
+  selector: 'app-tax-protest',
   templateUrl: 'fields.comp.html',
   styleUrls: ['../../Styles/1_2_fields.css'],
 })
 
-export class TaxRepresentativeComponent extends FieldsComponent {
+export class TaxProtestComponent extends FieldsComponent {
 
   private menuIdx = 1;
-  private subMenuIdx = 0;
+  private subMenuIdx = 2;
 
 
   constructor(

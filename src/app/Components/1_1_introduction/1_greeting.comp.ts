@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'greeting',
+  selector: 'app-greeting',
   templateUrl: '1_greeting.comp.html',
   styleUrls: ['../../Styles/1_1_1_greeting.css'],
 })

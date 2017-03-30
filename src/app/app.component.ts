@@ -8,7 +8,7 @@ import {NavigationEnd, Router} from "@angular/router";
       <!--<div id="outer_wrapper">-->
           <!--<router-outlet></router-outlet>-->
       <!--</div>-->
-    <!--<top></top>-->
+    <!--<app-top></app-top>-->
     <!--<under-top></under-top>-->
     <router-outlet></router-outlet>
 `,

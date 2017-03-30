@@ -1,4 +1,4 @@
-<top></top>
+<app-top></app-top>
 
 <div id="content" class="on_page_center pos_rel">
   <left_wing></left_wing>
@@ -6,6 +6,77 @@
 
   <sub_menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></sub_menu>
 
+  <div id="for_admin" *ngIf="login_status == LOGGED_IN" class="pos_rel">
+    <div id="admin_write" *ngIf="!writing" (click)="newFaq()">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      관리자 글쓰기
+    </div>
+    <div id="write_area" *ngIf="writing">
+      <span id="create_or_modify">
+        {{ createOrModify === 0 ? '새로 작성' : '수정' }}
+      </span>
+      <br>
+      <br>
+      <div class="pos_rel">
+        <label>주제어</label>
+        <input type="text" #topic value="{{topicToSend}}" (change)="setTopicToSend(topic.value)">
+      </div>
+      <br>
+      <div class="pos_rel">
+        <label>질문</label>
+        <textarea maxlength="200" #question value="{{questionToSend}}" (change)="setQuestionToSend(question.value)"></textarea>
+      </div>
+      <br>
+      <div class="pos_rel">
+        <label>답변</label>
+        <textarea maxlength="20000" style="height: 100px;" #answer value="{{answerToSend}}" (change)="setAnswerToSend(answer.value)"></textarea>
+      </div>
+      <br>
+      <div id="buttons">
+        <div (click)="setWriting(false)">
+          <i class="fa fa-close" aria-hidden="true"></i>
+          취소
+        </div>
+        <div (click)="submitFaq()">
+          <i class="fa fa-check" aria-hidden="true"></i>
+          작성완료
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></footer>
+  <div id="articles_container" class="_float_con">
+    <div class="column" id="articles_col_0"></div>
+    <div class="column" id="articles_col_1"></div>
+    <div class="column" id="articles_col_2"></div>
+  </div>
+
+  <div id="temp_col">
+    <div class="article" *ngFor="let faq of faqs"
+         ngClass="{{articles_on.indexOf(faq['faq.id']) < 0 ? '' : '-on'}}" (click)="articleOnOff(faq['faq.id'])">
+      <div class="header pos_rel">
+        <div>
+          <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
+        </div>
+        <span>{{faq['faq.topic']}}</span>
+      </div>
+      <div class="question">
+        {{faq['faq.question']}}
+      </div>
+      <div class="answer">
+        {{faq['faq.answer']}}
+      </div>
+      <div class="for_admin" *ngIf="login_status == LOGGED_IN">
+        <span (click)="modifyFaq(faq, $event)">수정</span>
+        <span (click)="deleteFaq(faq['faq.id'], $event)">삭제</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="pages">
+    <div *ngFor="let pageNo of pages" ngClass="{{page + 1 == pageNo ? '-on' : ''}}"
+    (click)="moveToPage(pageNo)">{{pageNo}}</div>
+  </div>
+
+  <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>
 </div>

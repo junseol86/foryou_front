@@ -1,4 +1,4 @@
-import {LoginResult} from "../Models/Account";
+import {LoginResult} from '../Models/Account';
 /**
  * Created by Hyeonmin on 2017-03-23.
  */

@@ -44,9 +44,9 @@ var _2_1_TaxRepresentativeComponent = (function (_super) {
         core_1.Component({
             moduleId: module.id,
             selector: 'tax_representative',
-            templateUrl: '1_tax_representative.comp.html',
+            templateUrl: 'fields.comp.html',
             styleUrls: ['../../Styles/1_2_fields.css'],
-        }), 
+        }),
         __metadata('design:paramtypes', [router_1.Router, mock_service_1.MockService])
     ], _2_1_TaxRepresentativeComponent);
     return _2_1_TaxRepresentativeComponent;

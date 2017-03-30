@@ -1,4 +1,4 @@
-<top></top>
+<app-top></app-top>
 
 <div id="content" class="on_page_center pos_rel">
   <left_wing></left_wing>
@@ -15,7 +15,7 @@
   <div id="search" class="pos_rel">
     <input type="text"/>
     <i class="fa fa-search" aria-hidden="true"></i>
-    <div id="admin_write">
+    <div id="admin_write" (click)="goToWritePage()">
       <i class="fa fa-pencil" aria-hidden="true"></i>
       관리자 글쓰기
     </div>
@@ -53,5 +53,5 @@
     <div>7</div>
   </div>
 
-  <footer></footer>
+  <app-footer></app-footer>
 </div>

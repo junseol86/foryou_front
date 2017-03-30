@@ -86,25 +86,3 @@
   }
 }
 
-#pages {
-  text-align: center;
-  padding: 40px 100px 0 100px;
-  & > div {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border: 1px solid #efefef;
-    border-radius: 15px;
-    margin: 2px;
-    cursor: pointer;
-    &:hover {
-      background-color: #efefef;
-    }
-    &.-on {
-      color: white;
-      background-color: $theme_color;
-      border: 0;
-    }
-  }
-}

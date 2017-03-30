@@ -1,3 +1,142 @@
+div, span {
+  font-family: "Malgun Gothic", Dotum; }
 
+.on_page_center {
+  width: 980px;
+  margin: 0 auto;
+  min-height: 1000px; }
+
+.pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con > .fl_r {
+    float: right; }
+  ._float_con:after {
+    clear: both; }
+
+._c_align {
+  text-align: center; }
+
+._pointer {
+  cursor: pointer; }
+
+#content {
+  border-left: 2px solid #efefef;
+  border-right: 2px solid #efefef;
+  padding: 36px; }
+
+#pages {
+  text-align: center;
+  padding: 40px 100px 0 100px; }
+  #pages > div {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #efefef;
+    border-radius: 15px;
+    margin: 2px;
+    cursor: pointer; }
+    #pages > div:hover {
+      background-color: #efefef; }
+    #pages > div.-on {
+      color: white;
+      background-color: #342f81;
+      border: 0; }
+
+#for_admin {
+  margin-bottom: 24px; }
+  #for_admin #admin_write {
+    color: #808080;
+    line-height: 24px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 4px 6px;
+    cursor: pointer;
+    display: inline-block; }
+    #for_admin #admin_write:hover {
+      background-color: #fafafa; }
+  #for_admin #write_area {
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    width: 450px;
+    padding: 20px;
+    margin-top: 12px; }
+    #for_admin #write_area > #create_or_modify {
+      font-size: 1.2em;
+      font-weight: bold; }
+    #for_admin #write_area > div {
+      padding: 0 8px 0 56px; }
+      #for_admin #write_area > div > textarea {
+        width: 100%; }
+      #for_admin #write_area > div > label {
+        position: absolute;
+        left: 0;
+        top: 0; }
+    #for_admin #write_area #buttons {
+      text-align: right;
+      padding-right: 0; }
+      #for_admin #write_area #buttons > div {
+        color: #808080;
+        line-height: 24px;
+        border: 1px solid #eaeaea;
+        border-radius: 4px;
+        padding: 4px 6px;
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 4px; }
+        #for_admin #write_area #buttons > div:hover {
+          background-color: #fafafa; }
+
+#articles_container .column {
+  width: 313px;
+  margin-right: 20px; }
+  #articles_container .column#articles_col_2 {
+    margin-right: 0; }
+  #articles_container .column .article {
+    border: 1px solid #efefef;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer; }
+    #articles_container .column .article:hover {
+      background-color: #fafafa; }
+    #articles_container .column .article .header {
+      margin-bottom: 12px; }
+      #articles_container .column .article .header div {
+        color: #342f81;
+        opacity: 0.67;
+        font-size: 1.2em; }
+      #articles_container .column .article .header span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 0.9em;
+        opacity: 0.5; }
+    #articles_container .column .article .answer {
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid #efefef;
+      color: #342f81;
+      display: none; }
+    #articles_container .column .article .for_admin {
+      margin-top: 8px;
+      text-align: right; }
+      #articles_container .column .article .for_admin > span {
+        margin-left: 6px;
+        opacity: 0.5; }
+        #articles_container .column .article .for_admin > span:hover {
+          opacity: 1; }
+    #articles_container .column .article.-on {
+      border: 1px dashed #342f81; }
+      #articles_container .column .article.-on:hover {
+        background-color: inherit; }
+      #articles_container .column .article.-on .question {
+        opacity: 0.5; }
+      #articles_container .column .article.-on .answer {
+        display: block; }
 
 /*# sourceMappingURL=1_4_2_faq.css.map */
