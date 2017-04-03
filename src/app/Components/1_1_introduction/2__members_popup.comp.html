@@ -1,8 +1,8 @@
-<div id="popup" ngClass="{{popupOn ? '-on' : ''}}" (click)="hidePopup()"
+<div id="popup" ngClass="{{popupOnInput ? '-on' : ''}}" (click)="hidePopup()"
      [ngStyle]="{'height':windowHeight + 'px', 'left': popupLeft + 'px'}"
 >
   <div>
-    <div class="profile" *ngIf="personId == 'yi-kwang-woo'">
+    <div class="profile" *ngIf="personIdInput == 'yi-kwang-woo'">
       <div>
         <span class="position">대표이사 / 세무사</span>
         <span class="name">이광우</span>
@@ -23,7 +23,7 @@
       <span class="item">E-mail</span> kwolee@hanmail.net
     </div>
 
-    <div class="profile" *ngIf="personId == 'cho-ki-yong'">
+    <div class="profile" *ngIf="personIdInput == 'cho-ki-yong'">
       <div>
         <span class="position">회장 / 세무사</span>
         <span class="name">조기용</span>
@@ -59,7 +59,7 @@
       <span class="item">전화</span> 031-608-9400&nbsp;&nbsp;&nbsp;&nbsp;<span class="item">팩스</span> 031-608-9404 H.P 010-9633-8888
     </div>
 
-    <div class="profile" *ngIf="personId == 'jung-jin-yong'">
+    <div class="profile" *ngIf="personIdInput == 'jung-jin-yong'">
       <div>
         <span class="position">세무사</span>
         <span class="name">정진용</span>
@@ -79,7 +79,7 @@
       </ul>
     </div>
 
-    <div class="profile" *ngIf="personId == 'yi-cheon-gil'">
+    <div class="profile" *ngIf="personIdInput == 'yi-cheon-gil'">
       <div>
         <span class="position">세무사</span>
         <span class="name">이천길</span>
@@ -106,7 +106,7 @@
       </ul>
     </div>
 
-    <div class="profile" *ngIf="personId == 'yi-tae-ya'">
+    <div class="profile" *ngIf="personIdInput == 'yi-tae-ya'">
       <div>
         <span class="position">세무사</span>
         <span class="name">이태야</span>
@@ -126,14 +126,14 @@
       <span class="item">TEL</span> 054-771-2991&nbsp;&nbsp;&nbsp;&nbsp;<span class="item">FAX</span> 054-743-5353
     </div>
 
-    <div class="profile" *ngIf="personId == 'kim-hyeon-seok'">
+    <div class="profile" *ngIf="personIdInput == 'kim-hyeon-seok'">
       <div>
         <span class="position">세무사</span>
         <span class="name">김현석</span>
       </div>
     </div>
 
-    <div class="profile" *ngIf="personId == 'song-cheol-han'">
+    <div class="profile" *ngIf="personIdInput == 'song-cheol-han'">
       <div>
         <span class="position">세무사</span>
         <span class="name">송철한</span>
@@ -147,7 +147,7 @@
       </ul>
     </div>
 
-    <div class="profile" *ngIf="personId == 'yoon-jin-seok'">
+    <div class="profile" *ngIf="personIdInput == 'yoon-jin-seok'">
       <div>
         <span class="position">세무사</span>
         <span class="name">윤진석</span>

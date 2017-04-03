@@ -48,6 +48,45 @@ div, span {
       background-color: #342f81;
       border: 0; }
 
+#write_form .input_div {
+  height: 40px;
+  line-height: 40px; }
+  #write_form .input_div label {
+    margin-right: 12px; }
+  #write_form .input_div input {
+    width: 600px;
+    height: 28px;
+    line-height: 28px; }
+  #write_form .input_div span {
+    margin-left: 6px;
+    opacity: 0.5; }
+
+#write_button_container {
+  margin-top: 12px; }
+  #write_button_container > #write_button {
+    float: right;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    cursor: pointer; }
+    #write_button_container > #write_button:hover {
+      border: 1px solid #cdcdcd; }
+
+#detail {
+  padding: 20px; }
+  #detail #title_bar {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eaeaea; }
+    #detail #title_bar #title {
+      font-weight: bold;
+      font-size: 1.2em; }
+    #detail #title_bar #date {
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      right: 0; }
+
 #calandar_title {
   margin: 24px 0 16px 0;
   font-size: 1.8em;

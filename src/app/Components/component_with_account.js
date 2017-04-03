@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by Hyeonmin on 2017-03-23.
  */
@@ -20,4 +21,3 @@ var ComponentWithAccount = (function () {
     return ComponentWithAccount;
 }());
 exports.ComponentWithAccount = ComponentWithAccount;
-//# sourceMappingURL=component_with_account.js.map

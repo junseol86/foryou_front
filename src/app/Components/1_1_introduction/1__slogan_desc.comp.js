@@ -8,10 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var SloganDescComponent = (function () {
     function SloganDescComponent() {
         this.selectedInitial = 0;
@@ -50,17 +48,15 @@ var SloganDescComponent = (function () {
     }
     SloganDescComponent.prototype.ngOnInit = function () {
     };
-    SloganDescComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'slogan_desc',
-            template: "\n    <div #slogan_desc id=\"slogan_desc\" class=\"_c_align\">\n      <p>\n        <span id=\"english\">{{slogan_descs[selectedInitial]['english']}}</span> : <span id=\"korean\">{{slogan_descs[selectedInitial]['korean']}}</span>\n      </p>\n      <div id=\"desc\">{{slogan_descs[selectedInitial]['desc']}}</div>\n    </div>\n  ",
-            styleUrls: ['../../Styles/1_1_1_greeting.css'],
-            inputs: ['selectedInitial']
-        }),
-        __metadata('design:paramtypes', [])
-    ], SloganDescComponent);
     return SloganDescComponent;
 }());
+SloganDescComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'slogan_desc',
+        template: "\n    <div #slogan_desc id=\"slogan_desc\" class=\"_c_align\">\n      <p>\n        <span id=\"english\">{{slogan_descs[selectedInitial]['english']}}</span> : <span id=\"korean\">{{slogan_descs[selectedInitial]['korean']}}</span>\n      </p>\n      <div id=\"desc\">{{slogan_descs[selectedInitial]['desc']}}</div>\n    </div>\n  ",
+        styleUrls: ['../../Styles/1_1_1_greeting.css'],
+        inputs: ['selectedInitial']
+    })
+], SloganDescComponent);
 exports.SloganDescComponent = SloganDescComponent;
-//# sourceMappingURL=1__slogan_desc.comp.js.map

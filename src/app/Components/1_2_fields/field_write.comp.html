@@ -4,5 +4,26 @@
   <left_wing></left_wing>
   <right_wing></right_wing>
 
-  <app-footer></app-footer>
+  <form method="post" id="write_form">
+
+    <div class="input_div">
+      <label>제목</label><input #title (change)="setTitle(title.value)" type="text" maxlength="50"/>
+    </div>
+    <div class="input_div">
+      <label>태그</label><input #tags (change)="setTags(tags.value)" type="text" maxlength="50"/>
+      <span>스페이스로 구분하여 입력</span>
+    </div>
+    <br>
+
+    <textarea id="content_editor">
+    </textarea>
+    <input name="image" type="file" id="image-upload" (change)="sendImage()" hidden>
+    <input name="image" type="file" id="file-upload" (change)="sendFile()" hidden>
+
+    <div id="write_button_container" class="_float_con">
+      <div id="write_button" (click)="submit()">작성완료</div>
+    </div>
+  </form>
+
+  <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>
 </div>

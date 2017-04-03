@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by Hyeonmin on 2017-03-15.
  */
@@ -110,4 +111,3 @@ var MockService = (function () {
     return MockService;
 }());
 exports.MockService = MockService;
-//# sourceMappingURL=mock.service.js.map

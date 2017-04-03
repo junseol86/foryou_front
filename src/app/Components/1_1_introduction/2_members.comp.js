@@ -8,13 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var router_1 = require("@angular/router");
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var MembersComponent = (function () {
-    function  MembersComponent (router) {
+    function MembersComponent(router) {
         this.router = router;
         this.menuIdx = 0;
         this.subMenuIdx = 1;
@@ -96,28 +93,26 @@ var MembersComponent = (function () {
             }
         ];
     }
-     MembersComponent .prototype.ngOnInit = function () {
+    MembersComponent.prototype.ngOnInit = function () {
     };
-     MembersComponent .prototype.navigateTo = function (address) {
+    MembersComponent.prototype.navigateTo = function (address) {
         this.router.navigate([address]);
     };
-     MembersComponent .prototype.showMemberPopup = function (id) {
+    MembersComponent.prototype.showMemberPopup = function (id) {
         this.popupOn = true;
         this.personId = id;
     };
-     MembersComponent .prototype.hidePopup = function () {
+    MembersComponent.prototype.hidePopup = function () {
         this.popupOn = false;
     };
-     MembersComponent  = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'members',
-            templateUrl: '2_members.comp.html',
-            styleUrls: ['../../Styles/1_1_2_members.css'],
-        }),
-        __metadata('design:paramtypes', [router_1.Router])
-    ],  MembersComponent );
-    return  MembersComponent ;
+    return MembersComponent;
 }());
-exports. MembersComponent  =  MembersComponent ;
-//# sourceMappingURL=2_members.comp.js.map
+MembersComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'app-members',
+        templateUrl: '2_members.comp.html',
+        styleUrls: ['../../Styles/1_1_2_members.css'],
+    })
+], MembersComponent);
+exports.MembersComponent = MembersComponent;

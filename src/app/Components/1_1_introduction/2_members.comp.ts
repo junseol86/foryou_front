@@ -7,37 +7,17 @@ import { Router } from "@angular/router";
 
 @Component({
   moduleId: module.id,
-  selector: 'members',
+  selector: 'app-members',
   templateUrl: '2_members.comp.html',
   styleUrls: ['../../Styles/1_1_2_members.css'],
 })
 
 export class  MembersComponent  implements OnInit {
 
-  private menuIdx:number = 0;
-  private subMenuIdx:number = 1;
-  private popupOn: boolean = false;
-  private personId: string = '';
-
-  constructor (
-    private router: Router,
-  ) {
-  }
-
-  ngOnInit():void {
-}
-
-  navigateTo(address: string): void {
-    this.router.navigate([address])
-  }
-
-  showMemberPopup(id: string):void {
-    this.popupOn = true;
-    this.personId = id;
-  }
-  hidePopup():void {
-    this.popupOn = false;
-  }
+  private menuIdx = 0;
+  private subMenuIdx = 1;
+  private popupOn = false;
+  private personId = '';
 
   branches = [
 
@@ -115,5 +95,26 @@ export class  MembersComponent  implements OnInit {
       ]
     }
   ]
+
+  constructor (
+    private router: Router,
+  ) {
+  }
+
+  ngOnInit(): void {
+}
+
+  navigateTo(address: string): void {
+    this.router.navigate([address]);
+  }
+
+  showMemberPopup(id: string): void {
+    this.popupOn = true;
+    this.personId = id;
+  }
+  hidePopup(): void {
+    this.popupOn = false;
+  }
+
 
 }

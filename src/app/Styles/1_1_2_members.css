@@ -1,49 +1,166 @@
-/*
-Errno::ENOENT: No such file or directory @ rb_sysopen - common.scss
+div, span {
+  font-family: "Malgun Gothic", Dotum; }
 
-Backtrace:
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/importers/filesystem.rb:215:in `read'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/importers/filesystem.rb:215:in `_find'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/importers/filesystem.rb:22:in `find_relative'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:48:in `import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin.rb:82:in `update_stylesheets'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/bin/scss:13:in `<top (required)>'
-C:/Ruby23-x64/bin/scss:22:in `load'
-C:/Ruby23-x64/bin/scss:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - common.scss"; }
+.on_page_center {
+  width: 980px;
+  margin: 0 auto;
+  min-height: 1000px; }
+
+.pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con > .fl_r {
+    float: right; }
+  ._float_con:after {
+    clear: both; }
+
+._c_align {
+  text-align: center; }
+
+._pointer {
+  cursor: pointer; }
+
+#content {
+  border-left: 2px solid #efefef;
+  border-right: 2px solid #efefef;
+  padding: 36px; }
+
+#pages {
+  text-align: center;
+  padding: 40px 100px 0 100px; }
+  #pages > div {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #efefef;
+    border-radius: 15px;
+    margin: 2px;
+    cursor: pointer; }
+    #pages > div:hover {
+      background-color: #efefef; }
+    #pages > div.-on {
+      color: white;
+      background-color: #342f81;
+      border: 0; }
+
+#write_form .input_div {
+  height: 40px;
+  line-height: 40px; }
+  #write_form .input_div label {
+    margin-right: 12px; }
+  #write_form .input_div input {
+    width: 600px;
+    height: 28px;
+    line-height: 28px; }
+  #write_form .input_div span {
+    margin-left: 6px;
+    opacity: 0.5; }
+
+#write_button_container {
+  margin-top: 12px; }
+  #write_button_container > #write_button {
+    float: right;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    cursor: pointer; }
+    #write_button_container > #write_button:hover {
+      border: 1px solid #cdcdcd; }
+
+#detail {
+  padding: 20px; }
+  #detail #title_bar {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eaeaea; }
+    #detail #title_bar #title {
+      font-weight: bold;
+      font-size: 1.2em; }
+    #detail #title_bar #date {
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      right: 0; }
+
+#members_container {
+  width: 100%;
+  overflow: hidden; }
+  #members_container > div {
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    background-color: #fafafa;
+    width: 310px;
+    height: 400px;
+    margin: 0 21px 21px 0; }
+    #members_container > div:nth-child(3n+3) {
+      margin-right: 0; }
+    #members_container > div:hover {
+      background-color: white; }
+    #members_container > div .branch_name {
+      margin: 20px;
+      font-size: 1.2em;
+      color: #342f81; }
+      #members_container > div .branch_name i {
+        margin-right: 6px;
+        color: #342f81;
+        opacity: 0.5; }
+    #members_container > div .personnel {
+      text-align: center;
+      cursor: pointer; }
+      #members_container > div .personnel .position {
+        color: #bfbfbf;
+        font-weight: bold; }
+      #members_container > div .personnel .name {
+        font-size: 1.2em; }
+      #members_container > div .personnel .pic {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #eaeaea;
+        margin: 32px auto 8px;
+        border-radius: 44px;
+        background-color: white;
+        background-size: 100px 100px; }
+      #members_container > div .personnel:hover .position {
+        color: #342f81; }
+      #members_container > div .personnel:hover .name {
+        font-weight: bold; }
+
+#popup {
+  position: fixed;
+  top: 0px;
+  width: 816px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  padding: 120px; }
+  #popup.-on {
+    display: block; }
+  #popup > div {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #444444;
+    border-radius: 6px;
+    color: white;
+    padding: 48px;
+    line-height: 1.6em; }
+    #popup > div ul {
+      margin: 4px 0 0 0; }
+    #popup > div .position {
+      opacity: 0.5;
+      font-size: 1.5em; }
+    #popup > div .name {
+      margin-left: 8px;
+      font-size: 2em;
+      font-weight: bold; }
+    #popup > div .subtitle {
+      opacity: 0.5;
+      font-size: 1.2em;
+      font-weight: bold; }
+    #popup > div span.item {
+      font-weight: bold;
+      opacity: 0.5; }
+
+/*# sourceMappingURL=1_1_2_members.css.map */

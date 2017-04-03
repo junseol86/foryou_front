@@ -4,7 +4,6 @@
 
 import {Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import {MenuService} from '../../Services/menu.service';
 
 import {ComponentWithAccount} from '../component_with_account';
 import {FaqService} from '../../Services/faq.service';

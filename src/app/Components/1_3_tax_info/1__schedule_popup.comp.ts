@@ -2,7 +2,7 @@
  * Created by Hyeonmin on 2017-03-27.
  */
 
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -35,15 +35,14 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
     </div>
   `,
   styleUrls: ['../../Styles/1_3_1_monthly_journal.css'],
-  inputs: ['popupOn']
 })
 export class SchedulePopupComponent implements OnInit {
 
-  popupOn: number;
-  windowHeight:number = 0;
-  popupLeft: number = 0;
+  @Input() popupOn: number;
+  windowHeight = 0;
+  popupLeft = 0;
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.windowHeight = window.innerHeight;
     this.popupLeft = (window.innerWidth - 1070) / 2;
   }

@@ -1,7 +1,8 @@
 import {FieldsComponent} from './fields.comp';
 import {MockService} from '../../Services/mock.service';
 import {Component} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {FieldsService} from "../../Services/fields.service";
 
 /**
  * Created by Hyeonmin on 2017-03-15.
@@ -19,12 +20,12 @@ export class TaxRepresentativeComponent extends FieldsComponent {
   private menuIdx = 1;
   private subMenuIdx = 0;
 
-
   constructor(
-    mockService: MockService,
+    activatedRoute: ActivatedRoute,
+    fieldsService: FieldsService,
     router: Router
   ) {
-    super(mockService, router);
+    super(activatedRoute, fieldsService, router, 'tax_representative');
   }
 
 }

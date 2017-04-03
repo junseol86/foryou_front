@@ -15,7 +15,7 @@
   <div id="search" class="pos_rel">
     <input type="text"/>
     <i class="fa fa-search" aria-hidden="true"></i>
-    <div id="admin_write" (click)="goToWritePage()">
+    <div *ngIf="login_status == LOGGED_IN" id="admin_write" (click)="goToWritePage(submenu)">
       <i class="fa fa-pencil" aria-hidden="true"></i>
       관리자 글쓰기
     </div>
@@ -31,27 +31,25 @@
     <div id="articles_col_3">
     </div>
     <div id="temp_col">
-      <div class="article" *ngFor="let article of articles">
+      <div class="article" *ngFor="let article of articles" (click)="toDetail(article['fields.id'])">
         <div class="date">
-          {{article['date']}}
+          {{article['fields.modified'].split(' ')[0]}}
         </div>
         <div class="title">
-          {{article['title']}}
+          {{article['fields.title']}}
         </div>
-        <div class="tag" *ngFor="let tag of article['tagsArray']"><i class="fa fa-tag" aria-hidden="true"></i> {{tag}}</div>
+        <div class="tag"
+             *ngFor="let tag of article['tagsArray']"
+             (click)="searchWord(tag)"
+        ><i class="fa fa-tag" aria-hidden="true"></i> {{tag}}</div>
       </div>
     </div>
   </div>
 
   <div id="pages">
-    <div class="-on">1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
+    <div *ngFor="let pageNo of pages" ngClass="{{page + 1 == pageNo ? '-on' : ''}}"
+         (click)="moveToPage(pageNo)">{{pageNo}}</div>
   </div>
 
-  <app-footer></app-footer>
+  <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>
 </div>

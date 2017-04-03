@@ -1,0 +1,16 @@
+<app-top></app-top>
+
+<div id="content" class="on_page_center pos_rel" *ngIf="detail">
+
+  <div id="detail">
+    <div id="title_bar" class="pos_rel">
+      <span id="title">{{detail['fields.title']}}</span>
+      <span id="date">{{detail['fields.modified']}}</span>
+    </div>
+
+    <div [innerHTML]="content">
+    </div>
+  </div>
+
+  <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>
+</div>
