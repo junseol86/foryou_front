@@ -67,21 +67,6 @@
       & .title {
         margin-bottom: 16px;
       }
-      & .tag {
-        display: inline-block;
-        font-size: 0.8em;
-        margin: 2px;
-        padding: 4px;
-        border: 1px solid #dedede;
-        border-radius: 4px;
-        opacity: 0.4;
-        &:hover {
-          opacity: 1;
-        }
-        & i {
-          color: $theme_color;
-        }
-      }
     }
   }
 }

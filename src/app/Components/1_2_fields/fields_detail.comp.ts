@@ -7,7 +7,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import {ComponentWithAccount} from '../component_with_account';
 import {CommonService} from '../../Services/common.service';
-import {unescape} from "querystring";
 
 @Component({
   moduleId: module.id,
@@ -22,9 +21,13 @@ export class FieldsDetailComponent extends ComponentWithAccount implements OnIni
   detail: Object;
   content: string;
 
+  private menuIdx = 1;
+  private subMenuIdx: number;
+
   constructor(
     private activatedRoute: ActivatedRoute,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private router: Router
   ) {
     super();
   }
@@ -42,8 +45,23 @@ export class FieldsDetailComponent extends ComponentWithAccount implements OnIni
   }
   afterGettingDetail(detail: Object): void {
     this.detail = detail;
+    this.detail['tagsArray'] = this.detail['fields.tags'].split(' ');
     this.content = detail['fields.content'];
+    switch (this.detail['fields.submenu']) {
+      case 'tax_representative': this.subMenuIdx = 0; break;
+      case 'property_tax': this.subMenuIdx = 1; break;
+      case 'tax_protest': this.subMenuIdx = 2; break;
+      case 'management_support': this.subMenuIdx = 3; break;
+      case 'management_consulting': this.subMenuIdx = 4; break;
+    }
   }
 
+  searchWord(search: string): void {
+    this.router.navigate([`fields/${this.detail['fields.submenu']}/${search}/0`]);
+  }
+
+  goToModifyPage(): void {
+    this.router.navigate([`fields/write/${this.detail['fields.submenu']}/${this.detail['fields.id']}/`]);
+  }
 }
 

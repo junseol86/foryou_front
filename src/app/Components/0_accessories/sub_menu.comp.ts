@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 
 @Component({
   moduleId: module.id,
-  selector: 'sub_menu',
+  selector: 'app-sub-menu',
   templateUrl: 'sub_menu.comp.html',
   styleUrls: ['../../Styles/0_accessories.css']
 })
@@ -26,7 +26,7 @@ export class SubMenuComponent  {
   }
 
   navigateTo(address: string): void {
-    this.router.navigate([address])
+    this.router.navigate([address]);
   }
 
 }

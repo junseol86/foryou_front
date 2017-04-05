@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'fields/management_consulting/:search/:page',  component: ManagementConsultingComponent },
   { path: 'fields/detail/:id', component: FieldsDetailComponent },
 
-  { path: 'fields/write/:submenu',  component: FieldsWriteComponent },
+  { path: 'fields/write/:submenu/:mode',  component: FieldsWriteComponent },
 
   { path: 'tax_info/monthly_journal',
     redirectTo: 'tax_info/monthly_journal/' + new Date().getFullYear() + '/' + (Number(new Date().getMonth()) + 1), pathMatch: 'full' },

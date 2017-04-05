@@ -100,11 +100,9 @@ div, span {
 }
 
 #detail {
-  padding: 20px;
+  padding: 36px;
   & #title_bar {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 20px;
     & #title {
       font-weight: bold;
       font-size: 1.2em;
@@ -115,5 +113,49 @@ div, span {
       top: 0;
       right: 0;
     }
+  }
+  & #tags {
+    margin-bottom: 12px;
+  }
+  & #detail_content {
+    padding: 36px 0;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+  }
+  & #detail_admin {
+    text-align: right;
+    padding-top: 24px;
+  }
+}
+
+.edit_button {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-left: 4px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid #cdcdcd;
+  }
+  & i {
+    opacity: 0.5;
+  }
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8em;
+  margin: 2px;
+  padding: 4px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+  & i {
+    color: $theme_color;
   }
 }

@@ -56,15 +56,16 @@ export class FieldsComponent extends ComponentWithAccount implements OnInit {
   }
 
   goToWritePage(submenu: String): void {
-    this.router.navigate(['fields/write/' + submenu]);
+    this.router.navigate(['fields/write/' + submenu + '/write']);
   }
 
   moveToPage(page: number): void {
     this.router.navigate([`fields/${this.submenu}/${this.search}/${page}`]);
   }
 
-  searchWord(search: string): void {
-    this.router.navigate([`fields/${this.submenu}/${search}/${this.page}`]);
+  searchWord(search: string, event: Event): void {
+    event.stopPropagation();
+    this.router.navigate([`fields/${this.submenu}/${search}/0`]);
   }
 
   toDetail(id: number): void  {

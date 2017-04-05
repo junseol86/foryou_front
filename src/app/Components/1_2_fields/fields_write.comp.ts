@@ -6,6 +6,7 @@ import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {FieldsService} from '../../Services/fields.service';
 import {ComponentWithAccount} from '../component_with_account';
+import {CommonService} from '../../Services/common.service';
 
 
 declare var tinymce: any;
@@ -23,6 +24,10 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
   private submenu: string;
   private title: string;
   private tags: string;
+  private mode: string;
+  id: number;
+  detail: Object;
+  content: string;
   editor;
 
   setTitle(title: string) {
@@ -35,7 +40,8 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
   constructor(
     private activatedRoute: ActivatedRoute,
     private fieldsService: FieldsService,
-    private router: Router
+    private router: Router,
+    private commonService: CommonService
   ) {
     super();
   }
@@ -43,7 +49,25 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.submenu = params['submenu'];
+      this.mode = params['mode'];
+      if (this.mode !== 'write') {
+        this.id = Number(this.mode);
+        this.getDetail();
+      }
     });
+  }
+
+  getDetail(): void {
+    this.commonService.getDetail('fields', this.id)
+      .then(result => this.afterGettingDetail(result));
+  }
+  afterGettingDetail(detail: Object): void {
+    this.detail = detail;
+    this.detail['tagsArray'] = this.detail['fields.tags'].split(' ');
+    this.content = detail['fields.content'];
+    this.title = this.detail['fields.title'];
+    this.tags = this.detail['fields.tags'];
+    tinymce.activeEditor.setContent(this.content);
   }
 
   ngAfterViewInit(): void {
@@ -140,18 +164,22 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
   }
 
   submit() {
-    const content = tinymce.activeEditor.getContent({format: 'raw'});
-    this.fieldsService.writeFields(
-      this.submenu, this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator
-    )
-      .then(result => this.afterSubmit(result));
+    if (this.mode === 'write') {
+      const content = tinymce.activeEditor.getContent({format: 'raw'});
+      this.fieldsService.writeFields(
+        this.submenu, this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator
+      )
+        .then(result => this.afterSubmit(result));
+    }
   }
   afterSubmit(result: Object) {
-    if (result['success'] === true) {
-      alert('글이 게시되었습니다.');
-      this.router.navigate(['/fields/' + this.submenu + '/@/0']);
-    } else {
-      alert('오류가 발생했습니다.  다시 시도해주세요.');
+    if (this.mode === 'write') {
+      if (result['success'] === true) {
+        alert('글이 게시되었습니다.');
+        this.router.navigate(['/fields/' + this.submenu + '/@/0']);
+      } else {
+        alert('오류가 발생했습니다.  다시 시도해주세요.');
+      }
     }
   }
 

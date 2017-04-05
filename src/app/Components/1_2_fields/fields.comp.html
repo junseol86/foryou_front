@@ -4,7 +4,7 @@
   <left_wing></left_wing>
   <right_wing></right_wing>
 
-  <sub_menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></sub_menu>
+  <app-sub-menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></app-sub-menu>
 
   <div id="field_desc">
     <i class="fa fa-check-square-o" aria-hidden="true"></i> 개인 및 법인의 장부작성 및 재무재표 작성
@@ -40,7 +40,7 @@
         </div>
         <div class="tag"
              *ngFor="let tag of article['tagsArray']"
-             (click)="searchWord(tag)"
+             (click)="searchWord(tag, $event)"
         ><i class="fa fa-tag" aria-hidden="true"></i> {{tag}}</div>
       </div>
     </div>

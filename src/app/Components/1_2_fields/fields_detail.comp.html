@@ -1,14 +1,29 @@
 <app-top></app-top>
 
 <div id="content" class="on_page_center pos_rel" *ngIf="detail">
+  <app-sub-menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></app-sub-menu>
+
+  <left_wing></left_wing>
+  <right_wing></right_wing>
 
   <div id="detail">
     <div id="title_bar" class="pos_rel">
       <span id="title">{{detail['fields.title']}}</span>
       <span id="date">{{detail['fields.modified']}}</span>
     </div>
+    <div id="tags">
+      <div class="tag"
+           *ngFor="let tag of detail['tagsArray']"
+           (click)="searchWord(tag)"
+      ><i class="fa fa-tag" aria-hidden="true"></i> {{tag}}</div>
+    </div>
 
-    <div [innerHTML]="content">
+    <div id="detail_content" [innerHTML]="content">
+    </div>
+
+    <div *ngIf="login_status == LOGGED_IN" id="detail_admin">
+      <div id="modify" class="edit_button" (click)="goToModifyPage()"><i class="fa fa-eraser" aria-hidden="true"></i> 수정</div>
+      <div id="delete" class="edit_button"><i class="fa fa-trash-o" aria-hidden="true"></i> 삭제</div>
     </div>
   </div>
 

@@ -7,10 +7,10 @@
   <form method="post" id="write_form">
 
     <div class="input_div">
-      <label>제목</label><input #title (change)="setTitle(title.value)" type="text" maxlength="50"/>
+      <label>제목</label><input #titleInput (change)="setTitle(titleInput.value)" value="{{title}}" type="text" maxlength="50"/>
     </div>
     <div class="input_div">
-      <label>태그</label><input #tags (change)="setTags(tags.value)" type="text" maxlength="50"/>
+      <label>태그</label><input #tagsInput (change)="setTags(tagsInput.value)" value="{{tags}}" type="text" maxlength="50"/>
       <span>스페이스로 구분하여 입력</span>
     </div>
     <br>
