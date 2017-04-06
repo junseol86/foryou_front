@@ -21,8 +21,8 @@ export class FooterComponent implements OnInit {
   LOGGING_IN = 1;
   LOGGED_IN = 2;
 
-  user_id: String;
-  password: String;
+  user_id: string;
+  password: string;
   accountService: AccountService;
   cookieService: CookieService;
   loginResult: LoginResult;
@@ -59,8 +59,8 @@ export class FooterComponent implements OnInit {
     }
   }
 
-  setPassword(value: String) {this.password = value; }
-  setUserId(value: String) {this.user_id = value; }
+  setPassword(value: string) {this.password = value; }
+  setUserId(value: string) {this.user_id = value; }
 
   show_login_interface(): void {
     this.updateLoginStatus(this.LOGGING_IN);

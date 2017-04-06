@@ -21,26 +21,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var component_with_account_1 = require("../component_with_account");
-var FieldsWriteComponent = (function (_super) {
-    __extends(FieldsWriteComponent, _super);
-    function FieldsWriteComponent(activatedRoute, fieldsService, router, commonService) {
+var TaxNewsWriteComponent = (function (_super) {
+    __extends(TaxNewsWriteComponent, _super);
+    function TaxNewsWriteComponent(activatedRoute, tax_newsService, router, commonService) {
         var _this = _super.call(this) || this;
         _this.activatedRoute = activatedRoute;
-        _this.fieldsService = fieldsService;
+        _this.tax_newsService = tax_newsService;
         _this.router = router;
         _this.commonService = commonService;
         return _this;
     }
-    FieldsWriteComponent.prototype.setTitle = function (title) {
+    TaxNewsWriteComponent.prototype.setTitle = function (title) {
         this.title = title;
     };
-    FieldsWriteComponent.prototype.setTags = function (tags) {
+    TaxNewsWriteComponent.prototype.setTags = function (tags) {
         this.tags = tags;
     };
-    FieldsWriteComponent.prototype.ngOnInit = function () {
+    TaxNewsWriteComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.activatedRoute.params.subscribe(function (params) {
-            _this.submenu = params['submenu'];
             _this.mode = params['mode'];
             if (_this.mode !== 'write') {
                 _this.id = Number(_this.mode);
@@ -48,20 +47,20 @@ var FieldsWriteComponent = (function (_super) {
             }
         });
     };
-    FieldsWriteComponent.prototype.getDetail = function () {
+    TaxNewsWriteComponent.prototype.getDetail = function () {
         var _this = this;
-        this.commonService.getDetail('fields', this.id)
+        this.commonService.getDetail('tax_news', this.id)
             .then(function (result) { return _this.afterGettingDetail(result); });
     };
-    FieldsWriteComponent.prototype.afterGettingDetail = function (detail) {
+    TaxNewsWriteComponent.prototype.afterGettingDetail = function (detail) {
         this.detail = detail;
-        this.detail['tagsArray'] = this.detail['fields.tags'].split(' ');
-        this.content = detail['fields.content'];
-        this.title = this.detail['fields.title'];
-        this.tags = this.detail['fields.tags'];
+        this.detail['tagsArray'] = this.detail['tax_news.tags'].split(' ');
+        this.content = detail['tax_news.content'];
+        this.title = this.detail['tax_news.title'];
+        this.tags = this.detail['tax_news.tags'];
         tinymce.activeEditor.setContent(this.content);
     };
-    FieldsWriteComponent.prototype.ngAfterViewInit = function () {
+    TaxNewsWriteComponent.prototype.ngAfterViewInit = function () {
         tinymce.init({
             skin_url: 'assets/skins/lightgray',
             selector: '#content_editor',
@@ -88,10 +87,10 @@ var FieldsWriteComponent = (function (_super) {
             }
         });
     };
-    FieldsWriteComponent.prototype.ngOnDestroy = function () {
+    TaxNewsWriteComponent.prototype.ngOnDestroy = function () {
         tinymce.remove(this.editor);
     };
-    FieldsWriteComponent.prototype.sendImage = function () {
+    TaxNewsWriteComponent.prototype.sendImage = function () {
         var imageFile = $('#image-upload').prop('files')[0];
         var formData = new FormData();
         formData.append('picture', imageFile);
@@ -121,7 +120,7 @@ var FieldsWriteComponent = (function (_super) {
             }
         });
     };
-    FieldsWriteComponent.prototype.sendFile = function () {
+    TaxNewsWriteComponent.prototype.sendFile = function () {
         var imageFile = $('#file-upload').prop('files')[0];
         var formData = new FormData();
         formData.append('file', imageFile);
@@ -149,7 +148,7 @@ var FieldsWriteComponent = (function (_super) {
             }
         });
     };
-    FieldsWriteComponent.prototype.submit = function () {
+    TaxNewsWriteComponent.prototype.submit = function () {
         var _this = this;
         var content = tinymce.activeEditor.getContent({ format: 'raw' });
         if (encodeURIComponent(content).length > 65000) {
@@ -157,19 +156,19 @@ var FieldsWriteComponent = (function (_super) {
             return;
         }
         if (this.mode === 'write') {
-            this.fieldsService.writeFields(this.submenu, this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator)
+            this.tax_newsService.writeTaxNews(this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator)
                 .then(function (result) { return _this.afterSubmit(result); });
         }
         else {
-            this.fieldsService.modifyFields(this.id, this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator)
+            this.tax_newsService.modifyTaxNews(this.id, this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator)
                 .then(function (result) { return _this.afterSubmit(result); });
         }
     };
-    FieldsWriteComponent.prototype.afterSubmit = function (result) {
+    TaxNewsWriteComponent.prototype.afterSubmit = function (result) {
         if (this.mode === 'write') {
             if (result['success'] === true) {
                 alert('글이 게시되었습니다.');
-                this.router.navigate(['/fields/' + this.submenu + '/@/0']);
+                this.router.navigate(['/tax_news/@/0']);
             }
             else {
                 alert('오류가 발생했습니다.  다시 시도해주세요.');
@@ -178,21 +177,21 @@ var FieldsWriteComponent = (function (_super) {
         else {
             if (result['success'] === true) {
                 alert('글이 수정되었습니다.');
-                this.router.navigate(["/fields/detail/" + this.id]);
+                this.router.navigate(["/tax_news/detail/" + this.id]);
             }
             else {
                 alert('오류가 발생했습니다.  다시 시도해주세요.');
             }
         }
     };
-    return FieldsWriteComponent;
+    return TaxNewsWriteComponent;
 }(component_with_account_1.ComponentWithAccount));
-FieldsWriteComponent = __decorate([
+TaxNewsWriteComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'app-field-write',
-        templateUrl: 'fields_write.comp.html',
-        styleUrls: ['../../Styles/1_2_fields.css'],
+        templateUrl: '2_tax_news_write.comp.html',
+        styleUrls: ['../../Styles/1_3_2_tax_news.css'],
     })
-], FieldsWriteComponent);
-exports.FieldsWriteComponent = FieldsWriteComponent;
+], TaxNewsWriteComponent);
+exports.TaxNewsWriteComponent = TaxNewsWriteComponent;

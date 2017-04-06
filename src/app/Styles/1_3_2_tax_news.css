@@ -147,37 +147,33 @@ div, span {
   #search_and_write #search_icon {
     cursor: pointer; }
 
-#asking_area {
-  margin: 16px 0 12px 0;
-  padding: 20px;
-  border: 1px solid #eaeaea;
-  border-radius: 4px; }
-  #asking_area > div {
-    margin-bottom: 12px; }
-  #asking_area input {
-    width: 80px;
-    margin: 0 20px 0 4px; }
-    #asking_area input#email {
-      width: 240px; }
-    #asking_area input#title {
-      width: 428px; }
-  #asking_area textarea {
-    width: 100%;
-    height: 240px; }
+#articles_container {
+  margin: 48px 0; }
+  #articles_container .article {
+    width: 485px; }
+    #articles_container .article:nth-child(odd) {
+      margin-right: 10px; }
+    #articles_container .article .article_inner_wrapper {
+      padding: 12px;
+      cursor: pointer; }
+      #articles_container .article .article_inner_wrapper .date_and_views {
+        text-align: right;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: #ababab;
+        font-size: 0.9em;
+        line-height: 24px; }
+      #articles_container .article .article_inner_wrapper .title {
+        margin-bottom: 8px; }
+      #articles_container .article .article_inner_wrapper .tags {
+        padding-bottom: 16px;
+        border-bottom: 1px solid #efefef; }
+        #articles_container .article .article_inner_wrapper .tags .tag {
+          display: inline-block; }
+      #articles_container .article .article_inner_wrapper:hover .title {
+        color: #342f81; }
+      #articles_container .article .article_inner_wrapper:hover .tags {
+        border-bottom: 1px solid #342f81; }
 
-#buttons {
-  text-align: right;
-  padding-right: 0; }
-  #buttons > div {
-    color: #808080;
-    line-height: 24px;
-    border: 1px solid #eaeaea;
-    border-radius: 4px;
-    padding: 4px 6px;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 4px; }
-    #buttons > div:hover {
-      background-color: #fafafa; }
-
-/*# sourceMappingURL=1_4_1_consulting_apply.css.map */
+/*# sourceMappingURL=1_3_2_tax_news.css.map */

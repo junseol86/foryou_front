@@ -30,7 +30,7 @@ __decorate([
 SubMenuComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'sub_menu',
+        selector: 'app-sub-menu',
         templateUrl: 'sub_menu.comp.html',
         styleUrls: ['../../Styles/0_accessories.css']
     })

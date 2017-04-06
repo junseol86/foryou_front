@@ -8,6 +8,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import {ComponentWithAccount} from '../component_with_account';
 import {FaqService} from '../../Services/faq.service';
 import {ListAndTotal} from '../../Models/List';
+import {TaxNewsService} from "../../Services/tax_news.service";
 
 declare var $: any;
 

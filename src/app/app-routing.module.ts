@@ -16,11 +16,14 @@ import { PropertyTaxComponent } from './Components/1_2_fields/2_property_tax.com
 import { TaxProtestComponent } from './Components/1_2_fields/3_tax_protest.comp';
 import { ManagementSupportComponent } from './Components/1_2_fields/4_management_support.comp';
 import { ManagementConsultingComponent } from './Components/1_2_fields/5_management_consulting.comp';
-import {FieldsDetailComponent} from './Components/1_2_fields/fields_detail.comp';
-import { FieldsWriteComponent } from './Components/1_2_fields/fields_write.comp'
+import { FieldsDetailComponent } from './Components/1_2_fields/fields_detail.comp';
+import { FieldsWriteComponent } from './Components/1_2_fields/fields_write.comp';
 
 import { MockService} from './Services/mock.service';
 import { MonthlyJournalComponent } from './Components/1_3_tax_info/1_monthly_journal.comp';
+import { TaxNewsComponent } from './Components/1_3_tax_info/2_tax_news.comp';
+import { TaxNewsDetailComponent } from './Components/1_3_tax_info/2_tax_news_detail.comp';
+import { TaxNewsWriteComponent } from './Components/1_3_tax_info/2_tax_news_write.comp';
 import { ConsultingApplyComponent } from './Components/1_4_online_consulting/1_consulting_apply.comp';
 import { FaqComponent } from './Components/1_4_online_consulting/2_faq.comp';
 
@@ -44,6 +47,11 @@ const routes: Routes = [
   { path: 'tax_info/monthly_journal',
     redirectTo: 'tax_info/monthly_journal/' + new Date().getFullYear() + '/' + (Number(new Date().getMonth()) + 1), pathMatch: 'full' },
   { path: 'tax_info/monthly_journal/:year/:month',  component: MonthlyJournalComponent },
+  { path: 'tax_info/tax_news',  redirectTo: 'tax_info/tax_news/@/0' },
+  { path: 'tax_info/tax_news/:search/:page',  component: TaxNewsComponent },
+  { path: 'tax_info/tax_news_detail/:id', component: TaxNewsDetailComponent },
+  { path: 'tax_info/tax_news_write/:mode',  component: TaxNewsWriteComponent },
+
   { path: 'online_consulting/consulting_apply', redirectTo: 'online_consulting/consulting_apply/@/1' },
   { path: 'online_consulting/consulting_apply/:search/:page', component: ConsultingApplyComponent },
 

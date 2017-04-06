@@ -19,7 +19,7 @@ export class AccountService {
     private values: ValueService
   ) { }
 
-  login(user_id: String, password: String): Promise<LoginResult> {
+  login(user_id: string, password: string): Promise<LoginResult> {
     const url =  this.values.backendAddress + '/login';
     return this.http.post(url, `user_id=${user_id}&password=${password}`, this.options)
       .toPromise()
@@ -27,7 +27,7 @@ export class AccountService {
       .catch(this.handleError);
   }
 
-  autoLogin(selector: String, validator: String): Promise<LoginResult> {
+  autoLogin(selector: string, validator: string): Promise<LoginResult> {
     const url =  this.values.backendAddress + '/autologin';
     return this.http.put(url, `selector=${selector}&validator=${validator}`, this.options)
       .toPromise()
@@ -35,7 +35,7 @@ export class AccountService {
       .catch(this.handleError);
   }
 
-  authenticate(selector: String, validator: String): Promise<Object> {
+  authenticate(selector: string, validator: string): Promise<Object> {
     const url =  this.values.backendAddress + '/authenticate';
     return this.http.put(url, `selector=${selector}&validator=${validator}`, this.options)
       .toPromise()

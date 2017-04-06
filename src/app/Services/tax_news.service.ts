@@ -10,7 +10,7 @@ import {ListAndTotal} from '../Models/List';
 import {ValueService} from './values.service';
 
 @Injectable()
-export  class FieldsService {
+export class TaxNewsService {
 
   headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
   options = new RequestOptions({headers: this.headers});
@@ -20,8 +20,9 @@ export  class FieldsService {
     private values: ValueService
   ) { }
 
-  getFields(submenu: string, page: number, search: string): Promise<ListAndTotal> {
-    const url = this.values.backendAddress + `/fields/${submenu}/${page}/${search}`;
+  getTaxNews(page: number, search: string): Promise<ListAndTotal> {
+    const url = this.values.developAddress + `/tax_news/${page}/${search}`;
+    console.log(url);
     return this.http.get(url)
       .toPromise()
       .then(response =>
@@ -29,17 +30,17 @@ export  class FieldsService {
       .catch(this.handleError);
   }
 
-  writeFields(submenu: string, title: string, tags: string, content: string, selector: string, validator: string): Promise<Object> {
-    const url = this.values.backendAddress + '/fields/write';
+  writeTaxNews(title: string, tags: string, content: string, selector: string, validator: string): Promise<Object> {
+    const url = this.values.developAddress + '/tax_news/write';
     return this.http.post(
-      url, `submenu=${submenu}&title=${title}&tags=${tags}&content=${content}&selector=${selector}&validator=${validator}`, this.options)
+      url, `&title=${title}&tags=${tags}&content=${content}&selector=${selector}&validator=${validator}`, this.options)
       .toPromise()
       .then(response => response.json().data as Object)
       .catch(this.handleError);
   }
 
-  modifyFields(id: number, title: string, tags: string, content: string, selector: string, validator: string): Promise<Object> {
-    const url = this.values.backendAddress + '/fields/modify';
+  modifyTaxNews(id: number, title: string, tags: string, content: string, selector: string, validator: string): Promise<Object> {
+    const url = this.values.developAddress + '/tax_news/modify';
     return this.http.patch(
       url, `id=${id}&title=${title}&tags=${tags}&content=${content}&selector=${selector}&validator=${validator}`, this.options)
       .toPromise()
@@ -47,8 +48,8 @@ export  class FieldsService {
       .catch(this.handleError);
   }
 
-  deleteFields(id: number, selector: string, validator: string): Promise<Object> {
-    const url = this.values.backendAddress + '/fields/delete';
+  deleteTaxNews(id: number, selector: string, validator: string): Promise<Object> {
+    const url = this.values.developAddress + '/tax_news/delete';
     return this.http.put(
       url, `id=${id}&selector=${selector}&validator=${validator}`, this.options)
       .toPromise()

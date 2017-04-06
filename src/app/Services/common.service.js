@@ -20,7 +20,7 @@ var CommonService = (function () {
         this.options = new http_1.RequestOptions({ headers: this.headers });
     }
     CommonService.prototype.getDetail = function (table, id) {
-        var url = this.values.backendAddress + ("/detail/" + table + "/" + id);
+        var url = this.values.developAddress + ("/detail/" + table + "/" + id);
         return this.http.get(url)
             .toPromise()
             .then(function (response) { return response.json().data; })

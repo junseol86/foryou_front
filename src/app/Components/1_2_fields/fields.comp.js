@@ -23,6 +23,13 @@ var FieldsComponent = (function (_super) {
         _this.router = router;
         _this.submenu = submenu;
         _this.pages = [];
+        _this.field_descs = [
+            ['개인 및 법인의 장부작성 및 재무재표 작성', '법인세, 소득세, 부가가치세 신고'],
+            ['양도소득세 자문 및 신고', '증여세, 상속세 자문 및 신고'],
+            ['억울한 세금에 대한 불복절차 진행', '과세전적부심사, 이의신청, 심사청구, 심판청구'],
+            ['법인설립 및 법인전환', '내부관리구조 수립 및 재무시스템 확립', '기업부설연구소 및 벤처기업인증'],
+            ['각종 볍에서 정하는 기업진단 업무']
+        ];
         return _this;
     }
     FieldsComponent.prototype.getFields = function () {
@@ -46,6 +53,9 @@ var FieldsComponent = (function (_super) {
             _this.getFields();
         });
     };
+    FieldsComponent.prototype.goToWritePage = function (submenu) {
+        this.router.navigate(['fields/write/' + submenu + '/write']);
+    };
     FieldsComponent.prototype.setPages = function (pageSize, total) {
         var pages = [];
         for (var i = 1; i <= Math.floor(total / pageSize) + 1; i++) {
@@ -53,14 +63,20 @@ var FieldsComponent = (function (_super) {
         }
         return pages;
     };
-    FieldsComponent.prototype.goToWritePage = function (submenu) {
-        this.router.navigate(['fields/write/' + submenu]);
-    };
     FieldsComponent.prototype.moveToPage = function (page) {
         this.router.navigate(["fields/" + this.submenu + "/" + this.search + "/" + page]);
     };
-    FieldsComponent.prototype.searchWord = function (search) {
-        this.router.navigate(["fields/" + this.submenu + "/" + search + "/" + this.page]);
+    FieldsComponent.prototype.searchWord = function (search, event) {
+        event.stopPropagation();
+        this.router.navigate(["fields/" + this.submenu + "/" + search + "/0"]);
+    };
+    FieldsComponent.prototype.searchWordEnter = function (search, event) {
+        if (event['key'] === 'Enter') {
+            this.searchWord(search, event);
+        }
+    };
+    FieldsComponent.prototype.toDetail = function (id) {
+        this.router.navigate(['fields/detail/' + id]);
     };
     return FieldsComponent;
 }(component_with_account_1.ComponentWithAccount));

@@ -120,26 +120,20 @@ div, span {
   .tag i {
     color: #342f81; }
 
-#field_desc {
-  font-size: 1.1em; }
-  #field_desc i {
-    color: #342f81;
-    opacity: 0.3; }
-
-#search {
+#search_and_write {
   margin-top: 12px;
   font-size: 1.1em;
   color: #808080;
   line-height: 24px; }
-  #search input {
+  #search_and_write input {
     border: 1px solid #dedede;
     height: 24px;
     outline: none;
     margin-right: 4px;
     padding: 0 4px; }
-  #search i {
+  #search_and_write i {
     color: #dedede; }
-  #search #admin_write {
+  #search_and_write #admin_write {
     position: absolute;
     right: 0;
     top: 0;
@@ -148,8 +142,16 @@ div, span {
     padding: 4px 6px;
     font-size: 0.9em;
     cursor: pointer; }
-    #search #admin_write:hover {
+    #search_and_write #admin_write:hover {
       background-color: #fafafa; }
+  #search_and_write #search_icon {
+    cursor: pointer; }
+
+#field_desc {
+  font-size: 1.1em; }
+  #field_desc i {
+    color: #342f81;
+    opacity: 0.3; }
 
 #articles_container {
   margin-top: 64px; }
@@ -169,8 +171,14 @@ div, span {
         background-color: #fafafa; }
       #articles_container > div .article .date {
         font-size: 0.9em;
-        color: #bfbfbf;
+        color: #ababab;
         margin-bottom: 16px; }
+      #articles_container > div .article .views {
+        font-size: 0.9em;
+        color: #ababab;
+        position: absolute;
+        top: 20px;
+        right: 20px; }
       #articles_container > div .article .title {
         margin-bottom: 16px; }
 

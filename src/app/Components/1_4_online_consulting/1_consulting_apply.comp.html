@@ -6,5 +6,39 @@
 
   <app-sub-menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></app-sub-menu>
 
+  <div id="search_and_write" class="pos_rel">
+    <input #search type="text" (keyup)="searchWordEnter(search.value, $event)"/>
+    <i id="search_icon" class="fa fa-search" aria-hidden="true" (click)="searchWord(search.value, $event)"></i>
+    <div id="admin_write" *ngIf="!asking" (click)="setAsking(true)">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+        문의하기
+    </div>
+  </div>
+
+  <div *ngIf="asking">
+    <div id="asking_area">
+      <div>
+        <label>이름</label> <input #askerInput (change)="setAsker(askerInput.value)" type="text" maxlength="6">
+        <label>이메일주소</label> <input #emailInput (change)="setEmail(emailInput.value)" id="email" type="text" maxlength="40">
+        <label>비밀번호</label> <input #passwordInput (change)="setPassword(passwordInput.value)" type="password">
+        <label>비밀번호확인</label> <input #passwordConfirmInput (change)="setPasswordConfirm(passwordConfirmInput.value)" type="password">
+      </div>
+      <div>
+        <label>제목</label> <input id="title" #titleInput (change)="setTitle(titleInput.value)" type="text" maxlength="35">
+      </div>
+      <textarea #questionInput (change)="setQuestion(questionInput.value)" maxlength="65000"></textarea>
+    </div>
+    <div id="buttons">
+      <div (click)="setAsking(false)">
+        <i class="fa fa-close" aria-hidden="true"></i>
+        취소
+      </div>
+      <div (click)="submitQuestion()">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        작성완료
+      </div>
+    </div>
+  </div>
+
   <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>
 </div>

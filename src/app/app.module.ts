@@ -23,6 +23,9 @@ import { FieldsDetailComponent } from './Components/1_2_fields/fields_detail.com
 import { FieldsWriteComponent } from './Components/1_2_fields/fields_write.comp';
 
 import { MonthlyJournalComponent } from './Components/1_3_tax_info/1_monthly_journal.comp';
+import { TaxNewsComponent } from './Components/1_3_tax_info/2_tax_news.comp';
+import { TaxNewsWriteComponent } from './Components/1_3_tax_info/2_tax_news_write.comp';
+import { TaxNewsDetailComponent } from './Components/1_3_tax_info/2_tax_news_detail.comp';
 import { ConsultingApplyComponent } from './Components/1_4_online_consulting/1_consulting_apply.comp';
 import { FaqComponent } from './Components/1_4_online_consulting/2_faq.comp';
 
@@ -34,7 +37,9 @@ import { CommonService } from './Services/common.service';
 import { AccountService } from './Services/account.service';
 import { FieldsService } from './Services/fields.service';
 import { MonthlyJournalService } from './Services/monthly_journal.service';
+import { TaxNewsService } from './Services/tax_news.service';
 import { FaqService } from './Services/faq.service';
+import { ConsultingApplyService } from './Services/consulting_apply.service';
 import { ValueService } from './Services/values.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
@@ -44,19 +49,23 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
     TopComponent,
     LeftComponent, RightComponent, FooterComponent, SubMenuComponent,
     DashboardComponent,
-    GreetingComponent,  MembersComponent ,
+    GreetingComponent,  MembersComponent,
     SloganDescComponent,
     MembersPopupComponent,
     TaxRepresentativeComponent, PropertyTaxComponent, TaxProtestComponent, ManagementSupportComponent, ManagementConsultingComponent,
     FieldsDetailComponent,
     FieldsWriteComponent,
     MonthlyJournalComponent,
+    TaxNewsComponent, TaxNewsDetailComponent, TaxNewsWriteComponent,
     SchedulePopupComponent,
     ConsultingApplyComponent,
     FaqComponent
   ],
   bootstrap: [ AppComponent ],
-  providers: [AccountService, CommonService, FieldsService, MonthlyJournalService, FaqService,
-    CookieService, ValueService]
+  providers: [
+    AccountService, CommonService,
+    FieldsService, MonthlyJournalService, TaxNewsService, FaqService, ConsultingApplyService,
+    CookieService, ValueService
+  ]
 })
 export class AppModule { }

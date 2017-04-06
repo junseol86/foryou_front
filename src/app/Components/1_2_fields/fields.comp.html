@@ -7,14 +7,15 @@
   <app-sub-menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></app-sub-menu>
 
   <div id="field_desc">
-    <i class="fa fa-check-square-o" aria-hidden="true"></i> 개인 및 법인의 장부작성 및 재무재표 작성
-    <br>
-    <i class="fa fa-check-square-o" aria-hidden="true"></i> 법인세, 소득세, 부가가치세 신고
+    <div *ngFor="let desc of field_descs[subMenuIdx]">
+      <i class="fa fa-check-square-o" aria-hidden="true"></i> {{desc}}
+      <br>
+    </div>
   </div>
 
-  <div id="search" class="pos_rel">
-    <input type="text"/>
-    <i class="fa fa-search" aria-hidden="true"></i>
+  <div id="search_and_write" class="pos_rel">
+    <input #search type="text" (keyup)="searchWordEnter(search.value, $event)"/>
+    <i id="search_icon" class="fa fa-search" aria-hidden="true" (click)="searchWord(search.value, $event)"></i>
     <div *ngIf="login_status == LOGGED_IN" id="admin_write" (click)="goToWritePage(submenu)">
       <i class="fa fa-pencil" aria-hidden="true"></i>
       관리자 글쓰기
@@ -31,9 +32,12 @@
     <div id="articles_col_3">
     </div>
     <div id="temp_col">
-      <div class="article" *ngFor="let article of articles" (click)="toDetail(article['fields.id'])">
+      <div class="article pos_rel" *ngFor="let article of articles" (click)="toDetail(article['fields.id'])">
         <div class="date">
           {{article['fields.modified'].split(' ')[0]}}
+        </div>
+        <div class="views">
+          조회수: {{article['fields.views']}}
         </div>
         <div class="title">
           {{article['fields.title']}}

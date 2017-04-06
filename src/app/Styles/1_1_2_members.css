@@ -120,6 +120,33 @@ div, span {
   .tag i {
     color: #342f81; }
 
+#search_and_write {
+  margin-top: 12px;
+  font-size: 1.1em;
+  color: #808080;
+  line-height: 24px; }
+  #search_and_write input {
+    border: 1px solid #dedede;
+    height: 24px;
+    outline: none;
+    margin-right: 4px;
+    padding: 0 4px; }
+  #search_and_write i {
+    color: #dedede; }
+  #search_and_write #admin_write {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 0.9em;
+    cursor: pointer; }
+    #search_and_write #admin_write:hover {
+      background-color: #fafafa; }
+  #search_and_write #search_icon {
+    cursor: pointer; }
+
 #members_container {
   width: 100%;
   overflow: hidden; }

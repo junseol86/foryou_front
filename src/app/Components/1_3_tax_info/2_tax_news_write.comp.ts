@@ -4,7 +4,7 @@
 
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {FieldsService} from '../../Services/fields.service';
+import {TaxNewsService} from '../../Services/tax_news.service';
 import {ComponentWithAccount} from '../component_with_account';
 import {CommonService} from '../../Services/common.service';
 
@@ -15,13 +15,12 @@ declare var $: any;
 @Component({
   moduleId: module.id,
   selector: 'app-field-write',
-  templateUrl: 'fields_write.comp.html',
-  styleUrls: ['../../Styles/1_2_fields.css'],
+  templateUrl: '2_tax_news_write.comp.html',
+  styleUrls: ['../../Styles/1_3_2_tax_news.css'],
 })
 
-export class FieldsWriteComponent extends ComponentWithAccount implements OnInit, AfterViewInit, OnDestroy {
+export class TaxNewsWriteComponent extends ComponentWithAccount implements OnInit, AfterViewInit, OnDestroy {
 
-  private submenu: string;
   private title: string;
   private tags: string;
   private mode: string;
@@ -39,7 +38,7 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private fieldsService: FieldsService,
+    private tax_newsService: TaxNewsService,
     private router: Router,
     private commonService: CommonService
   ) {
@@ -48,7 +47,6 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.submenu = params['submenu'];
       this.mode = params['mode'];
       if (this.mode !== 'write') {
         this.id = Number(this.mode);
@@ -58,15 +56,15 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
   }
 
   getDetail(): void {
-    this.commonService.getDetail('fields', this.id)
+    this.commonService.getDetail('tax_news', this.id)
       .then(result => this.afterGettingDetail(result));
   }
   afterGettingDetail(detail: Object): void {
     this.detail = detail;
-    this.detail['tagsArray'] = this.detail['fields.tags'].split(' ');
-    this.content = detail['fields.content'];
-    this.title = this.detail['fields.title'];
-    this.tags = this.detail['fields.tags'];
+    this.detail['tagsArray'] = this.detail['tax_news.tags'].split(' ');
+    this.content = detail['tax_news.content'];
+    this.title = this.detail['tax_news.title'];
+    this.tags = this.detail['tax_news.tags'];
     tinymce.activeEditor.setContent(this.content);
   }
 
@@ -172,12 +170,12 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
       return;
     }
     if (this.mode === 'write') {
-      this.fieldsService.writeFields(
-        this.submenu, this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator
+      this.tax_newsService.writeTaxNews(
+        this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator
       )
         .then(result => this.afterSubmit(result));
     } else {
-      this.fieldsService.modifyFields(
+      this.tax_newsService.modifyTaxNews(
         this.id, this.title, this.tags, encodeURIComponent(content), this.login_result.selector, this.login_result.validator
       )
         .then(result => this.afterSubmit(result));
@@ -187,14 +185,14 @@ export class FieldsWriteComponent extends ComponentWithAccount implements OnInit
     if (this.mode === 'write') {
       if (result['success'] === true) {
         alert('글이 게시되었습니다.');
-        this.router.navigate(['/fields/' + this.submenu + '/@/0']);
+        this.router.navigate(['tax_info/tax_news/@/0']);
       } else {
         alert('오류가 발생했습니다.  다시 시도해주세요.');
       }
     } else {
       if (result['success'] === true) {
         alert('글이 수정되었습니다.');
-        this.router.navigate([`/fields/detail/${this.id}`]);
+        this.router.navigate([`tax_info/tax_news_detail/${this.id}`]);
       } else {
         alert('오류가 발생했습니다.  다시 시도해주세요.');
       }

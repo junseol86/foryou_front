@@ -1,0 +1,42 @@
+@import 'common';
+
+#articles_container {
+  margin: 48px 0;
+  & .article {
+    width: 485px;
+    &:nth-child(odd) {
+      margin-right: 10px;
+    }
+    & .article_inner_wrapper {
+      padding: 12px;
+      cursor: pointer;
+      & .date_and_views {
+        text-align: right;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: #ababab;
+        font-size: 0.9em;
+        line-height: 24px;
+      }
+      & .title {
+        margin-bottom: 8px;
+      }
+      & .tags {
+        padding-bottom: 16px;
+        border-bottom: 1px solid #efefef;
+        & .tag {
+          display: inline-block;
+        }
+      }
+      &:hover {
+        & .title {
+          color: $theme_color;
+        }
+        & .tags {
+          border-bottom: 1px solid $theme_color;
+        }
+      }
+    }
+  }
+}

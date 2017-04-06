@@ -11,10 +11,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['../../Styles/1_1_1_greeting.css'],
 })
 
-export class GreetingComponent implements OnInit{
+export class GreetingComponent implements OnInit {
 
-  private menuIdx:number = 0;
-  private subMenuIdx:number = 0;
+  private menuIdx = 0;
+  private subMenuIdx = 0;
   private selectedInitial: number;
 
   slogan_initials = ['F', 'O', 'R', 'Y', 'O', 'U'];
@@ -23,7 +23,7 @@ export class GreetingComponent implements OnInit{
   ) {
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.selectedInitial = 0;
   }
 

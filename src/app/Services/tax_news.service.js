@@ -13,15 +13,16 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var List_1 = require("../Models/List");
-var FieldsService = (function () {
-    function FieldsService(http, values) {
+var TaxNewsService = (function () {
+    function TaxNewsService(http, values) {
         this.http = http;
         this.values = values;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         this.options = new http_1.RequestOptions({ headers: this.headers });
     }
-    FieldsService.prototype.getFields = function (submenu, page, search) {
-        var url = this.values.backendAddress + ("/fields/" + submenu + "/" + page + "/" + search);
+    TaxNewsService.prototype.getTaxNews = function (page, search) {
+        var url = this.values.developAddress + ("/tax_news/" + page + "/" + search);
+        console.log(url);
         return this.http.get(url)
             .toPromise()
             .then(function (response) {
@@ -29,34 +30,34 @@ var FieldsService = (function () {
         })
             .catch(this.handleError);
     };
-    FieldsService.prototype.writeFields = function (submenu, title, tags, content, selector, validator) {
-        var url = this.values.backendAddress + '/fields/write';
-        return this.http.post(url, "submenu=" + submenu + "&title=" + title + "&tags=" + tags + "&content=" + content + "&selector=" + selector + "&validator=" + validator, this.options)
+    TaxNewsService.prototype.writeTaxNews = function (title, tags, content, selector, validator) {
+        var url = this.values.developAddress + '/tax_news/write';
+        return this.http.post(url, "&title=" + title + "&tags=" + tags + "&content=" + content + "&selector=" + selector + "&validator=" + validator, this.options)
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
-    FieldsService.prototype.modifyFields = function (id, title, tags, content, selector, validator) {
-        var url = this.values.backendAddress + '/fields/modify';
+    TaxNewsService.prototype.modifyTaxNews = function (id, title, tags, content, selector, validator) {
+        var url = this.values.developAddress + '/tax_news/modify';
         return this.http.patch(url, "id=" + id + "&title=" + title + "&tags=" + tags + "&content=" + content + "&selector=" + selector + "&validator=" + validator, this.options)
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
-    FieldsService.prototype.deleteFields = function (id, selector, validator) {
-        var url = this.values.backendAddress + '/fields/delete';
+    TaxNewsService.prototype.deleteTaxNews = function (id, selector, validator) {
+        var url = this.values.developAddress + '/tax_news/delete';
         return this.http.put(url, "id=" + id + "&selector=" + selector + "&validator=" + validator, this.options)
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
-    FieldsService.prototype.handleError = function (error) {
+    TaxNewsService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    return FieldsService;
+    return TaxNewsService;
 }());
-FieldsService = __decorate([
+TaxNewsService = __decorate([
     core_1.Injectable()
-], FieldsService);
-exports.FieldsService = FieldsService;
+], TaxNewsService);
+exports.TaxNewsService = TaxNewsService;
