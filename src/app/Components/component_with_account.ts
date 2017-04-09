@@ -8,8 +8,8 @@ export class ComponentWithAccount {
   NOT_LOGGED_IN = 0;
   LOGGED_IN = 2;
 
-  login_status: number = this.NOT_LOGGED_IN;
-  login_result: LoginResult;
+  protected login_status: number = this.NOT_LOGGED_IN;
+  protected login_result: LoginResult;
 
   constructor() {
 

@@ -27,6 +27,7 @@ import { TaxNewsComponent } from './Components/1_3_tax_info/2_tax_news.comp';
 import { TaxNewsWriteComponent } from './Components/1_3_tax_info/2_tax_news_write.comp';
 import { TaxNewsDetailComponent } from './Components/1_3_tax_info/2_tax_news_detail.comp';
 import { ConsultingApplyComponent } from './Components/1_4_online_consulting/1_consulting_apply.comp';
+import { ConsultingApplyDetailComponent } from './Components/1_4_online_consulting/1_consulting_apply_detail.comp';
 import { FaqComponent } from './Components/1_4_online_consulting/2_faq.comp';
 
 import { SloganDescComponent } from './Components/1_1_introduction/1__slogan_desc.comp';
@@ -58,7 +59,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
     MonthlyJournalComponent,
     TaxNewsComponent, TaxNewsDetailComponent, TaxNewsWriteComponent,
     SchedulePopupComponent,
-    ConsultingApplyComponent,
+    ConsultingApplyComponent, ConsultingApplyDetailComponent,
     FaqComponent
   ],
   bootstrap: [ AppComponent ],

@@ -18,18 +18,18 @@
   <div *ngIf="asking">
     <div id="asking_area">
       <div>
-        <label>이름</label> <input #askerInput (change)="setAsker(askerInput.value)" type="text" maxlength="6">
-        <label>이메일주소</label> <input #emailInput (change)="setEmail(emailInput.value)" id="email" type="text" maxlength="40">
-        <label>비밀번호</label> <input #passwordInput (change)="setPassword(passwordInput.value)" type="password">
-        <label>비밀번호확인</label> <input #passwordConfirmInput (change)="setPasswordConfirm(passwordConfirmInput.value)" type="password">
+        <label>이름</label> <input #askerInput (change)="setAsker(askerInput.value)" value="{{asker}}" type="text" maxlength="6">
+        <label>이메일주소</label> <input #emailInput (change)="setEmail(emailInput.value)" id="email" value="{{email}}" type="text" maxlength="40">
+        <label>비밀번호</label> <input #passwordInput (change)="setPassword(passwordInput.value)" value="{{password}}" type="password">
+        <label>비밀번호확인</label> <input #passwordConfirmInput (change)="setPasswordConfirm(passwordConfirmInput.value)" value="{{password_confirm}}" type="password">
       </div>
       <div>
-        <label>제목</label> <input id="title" #titleInput (change)="setTitle(titleInput.value)" type="text" maxlength="35">
+        <label>제목</label> <input id="title" #titleInput (change)="setTitle(titleInput.value)" value="{{title}}" type="text" maxlength="35">
       </div>
-      <textarea #questionInput (change)="setQuestion(questionInput.value)" maxlength="65000"></textarea>
+      <textarea #questionInput (change)="setQuestion(questionInput.value)" value="{{question}}" maxlength="65000"></textarea>
     </div>
     <div id="buttons">
-      <div (click)="setAsking(false)">
+      <div (click)="clearInputs()">
         <i class="fa fa-close" aria-hidden="true"></i>
         취소
       </div>
@@ -38,6 +38,39 @@
         작성완료
       </div>
     </div>
+  </div>
+
+  <div id="articles_container">
+    <div id="articles_head">
+      <div class="if_answered">
+        답변상태
+      </div>
+      <div class="asker">
+        질문자
+      </div>
+      <div class="title">
+        제목
+      </div>
+      <div class="date">
+        질문등록일
+      </div>
+    </div>
+    <div class="article" *ngFor="let article of articles" (click)="toDetail(article['qna.id'])">
+      <div class="if_answered">
+        <span *ngIf="article['qna.answer'] === null || article['qna.answer'].trim() === ''" class="light"><i class="fa fa-square-o" aria-hidden="true"></i> 답변대기</span>
+        <span *ngIf="article['qna.answer'] !== null && article['qna.answer'].trim() !== ''"><i class="fa fa-check-square-o" aria-hidden="true"></i> 답변완료</span>
+      </div>
+      <div class="asker">
+        {{article['qna.asker']}}님
+      </div>
+      <div class="title">
+        <i class="fa fa-lock" aria-hidden="true"></i> {{article['qna.title']}}
+      </div>
+      <div class="date">
+        {{article['qna.asked'].split(' ')[0]}}
+      </div>
+    </div>
+
   </div>
 
   <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>

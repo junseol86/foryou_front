@@ -1,0 +1,62 @@
+<app-top></app-top>
+
+<div id="content" class="on_page_center pos_rel">
+  <app-sub-menu [menuIdx]="menuIdx" [subMenuIdx]="subMenuIdx"></app-sub-menu>
+
+  <left_wing></left_wing>
+  <right_wing></right_wing>
+
+  <div id="detail">
+    <div id="asker_password" *ngIf="!authorized">
+      <h3>
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        비밀번호를 입력하세요.
+      </h3>
+      <input type="password" #passwordInput (keyup)="setPassword(passwordInput.value, $event)">
+      <br>
+      <br>
+      <span (click)="submitPassword()"><i class="fa fa-check" aria-hidden="true"></i> 확인</span>
+      <span (click)="goBack()"><i class="fa fa-times" aria-hidden="true"></i> 취소</span>
+    </div>
+
+    <div *ngIf="authorized && detail">
+      <div id="title_bar" class="pos_rel">
+        <span id="title">{{detail['qna.title']}}</span>
+        <span id="date">{{detail['qna.asked']}}</span>
+      </div>
+      <form method="post" id="write_form">
+        <div>
+          {{detail['qna.question']}}
+          <div id="divider"></div>
+          <div *ngIf="adminOrAsker === 1">
+            <div *ngIf="detail['qna.answer'] !== null && detail['qna.answer'] !== ''" id="detail_content">
+              <div id="answer_title_bar" class="pos_rel">
+                <span id="answer_title">관리자 답변입니다.</span>
+                <span id="answer_date">{{detail['qna.answered']}}</span>
+              </div>
+              <div [innerHTML]="detail['qna.answer']">
+              </div>
+            </div>
+            <div id="no_answer" *ngIf="detail['qna.answer'] === null || detail['qna.answer'] === ''">
+              아직 답변이 작성되지 않았습니다.
+            </div>
+          </div>
+          <div *ngIf="adminOrAsker === 0">
+            <textarea (mouseenter)="refresh()" id="content_editor">
+            </textarea>
+          </div>
+        </div>
+        <div id="detail_admin">
+          <div id="submit" class="edit_button"
+               (click)="submitAnswer(false)" *ngIf="adminOrAsker === 0"><i class="fa fa-check" aria-hidden="true"></i> 작성완료</div>
+          <div id="cancel_answer" class="edit_button"
+               (click)="submitAnswer(true)" *ngIf="adminOrAsker === 0"><i class="fa fa-eraser" aria-hidden="true"></i> 답변삭제</div>
+          <div id="delete" class="edit_button"><i class="fa fa-trash-o" aria-hidden="true"></i> 삭제</div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>
+</div>

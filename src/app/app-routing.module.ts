@@ -25,6 +25,7 @@ import { TaxNewsComponent } from './Components/1_3_tax_info/2_tax_news.comp';
 import { TaxNewsDetailComponent } from './Components/1_3_tax_info/2_tax_news_detail.comp';
 import { TaxNewsWriteComponent } from './Components/1_3_tax_info/2_tax_news_write.comp';
 import { ConsultingApplyComponent } from './Components/1_4_online_consulting/1_consulting_apply.comp';
+import { ConsultingApplyDetailComponent } from './Components/1_4_online_consulting/1_consulting_apply_detail.comp';
 import { FaqComponent } from './Components/1_4_online_consulting/2_faq.comp';
 
 
@@ -52,8 +53,9 @@ const routes: Routes = [
   { path: 'tax_info/tax_news_detail/:id', component: TaxNewsDetailComponent },
   { path: 'tax_info/tax_news_write/:mode',  component: TaxNewsWriteComponent },
 
-  { path: 'online_consulting/consulting_apply', redirectTo: 'online_consulting/consulting_apply/@/1' },
+  { path: 'online_consulting/consulting_apply', redirectTo: 'online_consulting/consulting_apply/@/0' },
   { path: 'online_consulting/consulting_apply/:search/:page', component: ConsultingApplyComponent },
+  { path: 'online_consulting/consulting_apply_detail/:id', component: ConsultingApplyDetailComponent },
 
   { path: 'online_consulting/faq',  redirectTo: 'online_consulting/faq/0' },
   { path: 'online_consulting/faq/:page',  component: FaqComponent },
