@@ -84,7 +84,7 @@ export class FooterComponent implements OnInit {
     this.loginResult = loginResult;
     this.updateLoginResult(loginResult);
     switch (this.loginResult.loginResult) {
-      case 0: this.updateLoginStatus(this.LOGGING_IN); break;
+      case 0: this.updateLoginStatus(this.LOGGING_IN); alert('아이디와 패스워드를 다시 확인해주세요.'); break;
       case 1: this.updateLoginStatus(this.LOGGED_IN); break;
       case 2: this.updateLoginStatus(this.LOGGING_IN); alert('오류가 발생했습니다.  다시 시도해 주십시오.'); break;
     }

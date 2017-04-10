@@ -102,12 +102,27 @@ export class ConsultingApplyComponent extends ComponentWithAccount implements On
   afterSubmittingQuestion(result: Object) {
     if (result['success'] === true) {
       alert('질문이 등록되었습니다.');
-      this.router.navigate(['online_consulting/consulting_apply/@/0']);
+      if (this.page !== 0) {
+        this.router.navigate(['online_consulting/consulting_apply/@/0']);
+      } else {
+        this.refresh();
+      }
       this.clearInputs();
     } else {
       alert('오류가 발생했습니다.  다시 시도해 주세요.');
     }
   }
+
+  searchWord(search: string, event: Event): void {
+    event.stopPropagation();
+    this.router.navigate([`online_consulting/consulting_apply/${search}/0`]);
+  }
+  searchWordEnter(search: string, event: Event) {
+    if (event['key'] === 'Enter') {
+      this.searchWord(search, event);
+    }
+  }
+
 
   setPages(pageSize: number, total: number): number[] {
     const pages: number[] = [];
@@ -123,5 +138,9 @@ export class ConsultingApplyComponent extends ComponentWithAccount implements On
 
   toDetail(id: number): void {
     this.router.navigate([`online_consulting/consulting_apply_detail/${id}`]);
+  }
+
+  refresh() {
+    location.reload();
   }
 }

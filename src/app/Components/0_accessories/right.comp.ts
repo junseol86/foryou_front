@@ -3,11 +3,20 @@
  */
 
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   moduleId: module.id,
-  selector: 'right_wing',
+  selector: 'app-right-wing',
   templateUrl: 'right.comp.html',
   styleUrls: ['../../Styles/0_accessories.css']
 })
-export class RightComponent  {  }
+export class RightComponent  {
+  constructor(
+    private router: Router
+  ) { }
+
+  goToLink(link:string) {
+    window.open(link, '_blank');
+  }
+}

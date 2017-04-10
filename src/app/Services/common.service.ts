@@ -19,7 +19,7 @@ export  class CommonService {
   }
 
   getDetail(table: string, id: number): Promise<Object> {
-    const url =  this.values.developAddress + `/detail/${table}/${id}`;
+    const url =  this.values.backendAddress + `/detail/${table}/${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Object)

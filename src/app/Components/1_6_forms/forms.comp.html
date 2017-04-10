@@ -1,10 +1,46 @@
 <app-top></app-top>
 
-<div id="content" class="on_page_center pos_rel" *ngIf="detail">
-  <div>
+<div id="content" class="on_page_center pos_rel">
+  <div id="sub_menus">
+    <div (click)="refresh()">
     <span class="-on">
       서식모음
     </span>
+    </div>
+  </div>
+
+  <app-left-wing></app-left-wing>
+  <app-right-wing></app-right-wing>
+
+  <div id="for_admin" *ngIf="login_status == LOGGED_IN" class="pos_rel">
+    <form>
+      <h3>새 문서 올리기</h3>
+      <div class="_float_con">
+        <label>문서제목: </label>
+        <input id="title_input" maxlength="50" #titleInput (change)="setTitle(titleInput.value)" value="{{title}}">
+        <input id="file_input" type="file" #fileInput (change)="setFileToUpload(fileInput.value)"/>
+        <div id="upload_button" *ngIf="fileToUpload != ''" (click)="upload()">
+          <i class="fa fa-upload" aria-hidden="true"></i>
+          선택한 파일 업로드
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="forms">
+    <div class="form" *ngFor="let form of forms">
+      <div class="title">
+        <a href="http://{{form['forms.file_url']}}" download>
+          <i class="fa fa-download" aria-hidden="true"></i> {{form['forms.title']}}
+        </a>
+        <span *ngIf="login_status == LOGGED_IN" (click)="deleteForm(form['forms.id'])">
+          <i class="fa fa-trash-o" aria-hidden="true"></i> 삭제
+        </span>
+      </div>
+      <div class="uploaded">
+        {{form['forms.uploaded'].split(' ')[0]}}
+      </div>
+    </div>
   </div>
 
   <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>

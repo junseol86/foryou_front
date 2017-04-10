@@ -21,7 +21,7 @@ export class TaxNewsService {
   ) { }
 
   getTaxNews(page: number, search: string): Promise<ListAndTotal> {
-    const url = this.values.developAddress + `/tax_news/${page}/${search}`;
+    const url = this.values.backendAddress + `/tax_news/${page}/${search}`;
     console.log(url);
     return this.http.get(url)
       .toPromise()
@@ -31,7 +31,7 @@ export class TaxNewsService {
   }
 
   writeTaxNews(title: string, tags: string, content: string, selector: string, validator: string): Promise<Object> {
-    const url = this.values.developAddress + '/tax_news/write';
+    const url = this.values.backendAddress + '/tax_news/write';
     return this.http.post(
       url, `&title=${title}&tags=${tags}&content=${content}&selector=${selector}&validator=${validator}`, this.options)
       .toPromise()
@@ -40,7 +40,7 @@ export class TaxNewsService {
   }
 
   modifyTaxNews(id: number, title: string, tags: string, content: string, selector: string, validator: string): Promise<Object> {
-    const url = this.values.developAddress + '/tax_news/modify';
+    const url = this.values.backendAddress + '/tax_news/modify';
     return this.http.patch(
       url, `id=${id}&title=${title}&tags=${tags}&content=${content}&selector=${selector}&validator=${validator}`, this.options)
       .toPromise()
@@ -49,7 +49,7 @@ export class TaxNewsService {
   }
 
   deleteTaxNews(id: number, selector: string, validator: string): Promise<Object> {
-    const url = this.values.developAddress + '/tax_news/delete';
+    const url = this.values.backendAddress + '/tax_news/delete';
     return this.http.put(
       url, `id=${id}&selector=${selector}&validator=${validator}`, this.options)
       .toPromise()

@@ -1,0 +1,61 @@
+@import 'common';
+
+#for_admin {
+  & #upload_button {
+    color: #808080;
+    line-height: 24px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 4px 6px;
+    cursor: pointer;
+    display: inline-block;
+    &:hover {
+      background-color: #fafafa;
+    }
+  }
+  & input {
+    margin: 0 10px;
+  }
+  & #title_input {
+    width: 400px;
+  }
+}
+
+#forms {
+  margin-top: 48px;
+  & .form {
+    border-bottom: 1px solid #eaeaea;
+    & a {
+      text-decoration: none;
+      color: $theme_color;
+    }
+    & > div {
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      &.title {
+        width: 890px;
+        & i {
+          opacity: 0.2;
+        }
+        & span {
+          opacity: 0.5;
+          margin-left: 12px;
+          font-size: 0.9em;
+          & i {
+            opacity: 1;
+          }
+          cursor: pointer;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      &.uploaded {
+        width: 80px;
+        text-align: right;
+        opacity: 0.5;
+      }
+    }
+  }
+}

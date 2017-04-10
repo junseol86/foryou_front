@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-
 import { DashboardComponent } from './Components/1_0_dashboard/dashboard.comp';
 import { MenuService } from './Services/menu.service';
 import { GreetingComponent } from './Components/1_1_introduction/1_greeting.comp';
@@ -18,6 +17,7 @@ import { ManagementSupportComponent } from './Components/1_2_fields/4_management
 import { ManagementConsultingComponent } from './Components/1_2_fields/5_management_consulting.comp';
 import { FieldsDetailComponent } from './Components/1_2_fields/fields_detail.comp';
 import { FieldsWriteComponent } from './Components/1_2_fields/fields_write.comp';
+import { FormsComponent } from './Components/1_6_forms/forms.comp';
 
 import { MockService} from './Services/mock.service';
 import { MonthlyJournalComponent } from './Components/1_3_tax_info/1_monthly_journal.comp';
@@ -59,6 +59,8 @@ const routes: Routes = [
 
   { path: 'online_consulting/faq',  redirectTo: 'online_consulting/faq/0' },
   { path: 'online_consulting/faq/:page',  component: FaqComponent },
+
+  { path: 'forms',  component: FormsComponent },
   ];
 
 @NgModule({

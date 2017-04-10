@@ -1,17 +1,17 @@
 <div id="left_wing">
-  <div>
+  <div (click)="goTo('online_consulting/consulting_apply')">
     <img src="/app/Images/other/quick_consulting.png">
     <div>세무서비스<br>상담의뢰</div>
   </div>
-  <div>
+  <div (click)="goToLink('http://www.4insure.or.kr/ins4/ptl/data/calc/forwardInsuFeeMockCalcRenewal.do')">
     <img src="/app/Images/other/quick_4_insurances.png">
     <div>4대보험<br>자동계산</div>
   </div>
-  <div>
+  <div (click)="goToLink('https://www.hometax.go.kr/websquare/websquare.wq?w2xPath=/ui/pp/index_pp.xml&tmIdx=19')">
     <img src="/app/Images/other/quick_calculation.png">
     <div>간편한<br>세금계산</div>
   </div>
-  <div>
+  <div (click)="goTo('forms')">
     <img src="/app/Images/other/quick_documents.png">
     <div>서식모음</div>
   </div>

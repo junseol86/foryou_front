@@ -147,70 +147,48 @@ div, span {
   #search_and_write #search_icon {
     cursor: pointer; }
 
-#left_wing {
-  position: absolute;
-  top: 64px;
-  left: -120px;
-  width: 80px;
-  height: 240px; }
-  #left_wing > div {
-    cursor: pointer;
-    margin-bottom: 30px; }
-    #left_wing > div > img {
-      opacity: 0.3; }
-    #left_wing > div:hover > img {
-      opacity: 1; }
-    #left_wing > div > div {
-      width: 100%;
-      text-align: center; }
+#for_admin #upload_button {
+  color: #808080;
+  line-height: 24px;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  padding: 4px 6px;
+  cursor: pointer;
+  display: inline-block; }
+  #for_admin #upload_button:hover {
+    background-color: #fafafa; }
+#for_admin input {
+  margin: 0 10px; }
+#for_admin #title_input {
+  width: 400px; }
 
-#right_wing {
-  position: absolute;
-  top: 64px;
-  right: -180px;
-  width: 160px;
-  height: 240px; }
-  #right_wing > div {
-    width: 100%;
-    height: 64px;
-    background-size: 100% 128px;
-    cursor: pointer;
-    opacity: 0.4; }
-    #right_wing > div:hover {
-      background-position-y: 64px;
-      opacity: 1; }
+#forms {
+  margin-top: 48px; }
+  #forms .form {
+    border-bottom: 1px solid #eaeaea; }
+    #forms .form a {
+      text-decoration: none;
+      color: #342f81; }
+    #forms .form > div {
+      display: inline-block;
+      height: 40px;
+      line-height: 40px; }
+      #forms .form > div.title {
+        width: 890px; }
+        #forms .form > div.title i {
+          opacity: 0.2; }
+        #forms .form > div.title span {
+          opacity: 0.5;
+          margin-left: 12px;
+          font-size: 0.9em;
+          cursor: pointer; }
+          #forms .form > div.title span i {
+            opacity: 1; }
+          #forms .form > div.title span:hover {
+            opacity: 1; }
+      #forms .form > div.uploaded {
+        width: 80px;
+        text-align: right;
+        opacity: 0.5; }
 
-#sub_menus {
-  margin-bottom: 36px; }
-  #sub_menus span {
-    padding: 6px 20px;
-    border-bottom: 1px solid #342f81;
-    cursor: pointer; }
-    #sub_menus span.-on {
-      color: white;
-      background-color: #342f81; }
-
-#footer {
-  font-size: 0.85em;
-  color: #ababab;
-  margin-top: 100px;
-  text-align: center; }
-  #footer > span {
-    font-size: 1.2em;
-    color: #808080; }
-    #footer > span#login_btn {
-      cursor: pointer; }
-      #footer > span#login_btn:hover {
-        text-decoration: underline; }
-    #footer > span input {
-      width: 80px;
-      margin-right: 8px; }
-    #footer > span .button {
-      margin-right: 4px;
-      cursor: pointer; }
-      #footer > span .button:hover {
-        text-decoration: underline; }
-    #footer > span i {
-      margin-left: 12px; }
-
-/*# sourceMappingURL=0_accessories.css.map */
+/*# sourceMappingURL=1_6_forms.css.map */

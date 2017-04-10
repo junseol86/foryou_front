@@ -220,6 +220,26 @@ export class ConsultingApplyDetailComponent extends ComponentWithAccount impleme
       }
   }
 
+  deleteQuestion() {
+    if (confirm('이 게시물을 삭제하시겠습니까?')) {
+      if (this.adminOrAsker === 0) {
+        this.consultingApplyService.deleteQuestion(this.id, this.login_result.selector, this.login_result.validator, '')
+          .then(result => this.afterDeletingQuestion(result));
+      } else {
+        this.consultingApplyService.deleteQuestion(this.id, '', '', this.password)
+          .then(result => this.afterDeletingQuestion(result));
+      }
+    }
+  }
+  afterDeletingQuestion(result: Object) {
+    if (result['success'] === true) {
+      alert('게시물이 삭제되었습니다.');
+      this.router.navigate(['online_consulting/consulting_apply/@/0']);
+    } else {
+      alert('오류가 발생했습니다.  다시 시도해주세요');
+    }
+  }
+
   refresh() {
     location.reload();
   }
