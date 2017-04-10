@@ -1,0 +1,11 @@
+<app-top></app-top>
+
+<div id="content" class="on_page_center pos_rel" *ngIf="detail">
+  <div>
+    <span class="-on">
+      서식모음
+    </span>
+  </div>
+
+  <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>
+</div>
