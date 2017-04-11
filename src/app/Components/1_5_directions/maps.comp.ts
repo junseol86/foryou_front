@@ -37,4 +37,9 @@ export class MapsComponent extends ComponentWithAccount {
     this.lat = this.positions[this.branchIdx][0];
     this.lng = this.positions[this.branchIdx][1];
   }
+
+  refresh() {
+    location.reload();
+  }
+
 }
