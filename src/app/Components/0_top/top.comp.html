@@ -9,7 +9,7 @@
             <div *ngFor="let sub_menu of menu.sub_menus" (click)="navigateTo(menu.link + '/' + sub_menu.link)">{{sub_menu.name}}</div>
           </div>
         </div>
-        <div *ngIf="menu.sub_menus == null" class="no_sub">
+        <div *ngIf="menu.sub_menus == null" class="no_sub" (click)="navigateTo(menu.link)">
           <span>{{menu.name}}</span>
         </div>
       </div>

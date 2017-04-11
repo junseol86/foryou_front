@@ -30,6 +30,7 @@ import { SloganDescComponent } from './Components/1_1_introduction/1__slogan_des
 import { MembersPopupComponent } from './Components/1_1_introduction/2__members_popup.comp';
 import { SchedulePopupComponent } from './Components/1_3_tax_info/1__schedule_popup.comp';
 import { FormsComponent } from './Components/1_6_forms/forms.comp';
+import { MapsComponent } from './Components/1_5_directions/maps.comp';
 import { CommonService } from './Services/common.service';
 import { AccountService } from './Services/account.service';
 import { FieldsService } from './Services/fields.service';
@@ -40,9 +41,14 @@ import { ConsultingApplyService } from './Services/consulting_apply.service';
 import { FormsService } from './Services/forms.service';
 import { ValueService } from './Services/values.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
+import {AgmCoreModule} from 'angular2-google-maps/core';
+
 
 @NgModule({
-  imports:      [ BrowserModule, AppRoutingModule, HttpModule ],
+  imports:      [ BrowserModule, AppRoutingModule, HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCBIPtDk9U8_eoGxXGInsCzTNTlM0ySaDA'
+    })],
   declarations: [ AppComponent,
     TopComponent,
     LeftComponent, RightComponent, FooterComponent, SubMenuComponent,
@@ -55,7 +61,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
     FieldsWriteComponent,
     MonthlyJournalComponent,
     TaxNewsComponent, TaxNewsDetailComponent, TaxNewsWriteComponent,
-    FormsComponent,
+    FormsComponent, MapsComponent,
     SchedulePopupComponent,
     ConsultingApplyComponent, ConsultingApplyDetailComponent,
     FaqComponent

@@ -1,0 +1,52 @@
+<app-top></app-top>
+
+<div id="content" class="on_page_center pos_rel">
+
+  <app-left-wing></app-left-wing>
+  <app-right-wing></app-right-wing>
+
+  <div id="sub_menus">
+    <div (click)="refresh()">
+    <span class="-on">
+      오시는 길
+    </span>
+    </div>
+  </div>
+
+  <div id="buttons">
+    <div (click)="setBranchIdx(0)" ngClass="{{branchIdx === 0 ? '-on' : ''}}">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      {{positions[0][2]}}
+    </div>
+    <div (click)="setBranchIdx(1)" ngClass="{{branchIdx === 1 ? '-on' : ''}}">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      {{positions[1][2]}}
+    </div>
+    <div (click)="setBranchIdx(2)" ngClass="{{branchIdx === 2 ? '-on' : ''}}">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      {{positions[2][2]}}
+    </div>
+    <div (click)="setBranchIdx(3)" ngClass="{{branchIdx === 3 ? '-on' : ''}}">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      {{positions[3][2]}}
+    </div>
+    <div (click)="setBranchIdx(4)" ngClass="{{branchIdx === 4 ? '-on' : ''}}">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      {{positions[4][2]}}
+    </div>
+
+  </div>
+
+  <div id="map" class="pos_rel">
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+    </sebm-google-map>
+    <div id="address">
+      <span>
+        {{positions[branchIdx][3]}}
+      </span>
+    </div>
+  </div>
+
+  <app-footer (login_status_output)="getLoginStatus($event)" (login_result_output)="getLoginResult($event)"></app-footer>
+</div>

@@ -1,0 +1,38 @@
+@import 'common';
+
+#image_container {
+  & img {
+    display: block;
+  }
+  border-bottom: 1px solid #eaeaea;
+}
+
+#articles_container {
+  margin-top: 36px;
+  & > div {
+    width: 300px;
+    margin-right: 20px;
+    padding-right: 13px;
+    &:last-child {
+      margin-right: 0;
+    }
+    & > .title {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: $theme_color;
+      opacity: 0.9;
+      padding-bottom: 16px;
+    }
+    & .article {
+      padding-left: 8px;
+      line-height: 28px;
+      height: 28px;
+      border-bottom: 1px solid #eaeaea;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}

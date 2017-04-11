@@ -3,6 +3,7 @@
  */
 
 export class ValueService {
-  backendAddress = 'http://13.124.80.145:9002';
-  developAddress = 'http://localhost:9002';
+  backendAddress = 'http://backend.taxfy.co.kr';
+  developAddress = 'http://localhost:9005';
+  googleMapApiKey = 'AIzaSyCBIPtDk9U8_eoGxXGInsCzTNTlM0ySaDA';
 }

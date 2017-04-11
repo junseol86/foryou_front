@@ -146,48 +146,36 @@ div, span {
   #search_and_write #search_icon {
     cursor: pointer; }
 
-#for_admin #upload_button {
-  color: #808080;
-  line-height: 24px;
-  border: 1px solid #eaeaea;
-  border-radius: 4px;
-  padding: 4px 6px;
-  cursor: pointer;
-  display: inline-block; }
-  #for_admin #upload_button:hover {
-    background-color: #fafafa; }
-#for_admin input {
-  margin: 0 10px; }
-#for_admin #title_input {
-  width: 400px; }
+#address {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  width: 980px;
+  text-align: center; }
+  #address span {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px 12px;
+    border-radius: 24px; }
 
-#forms {
-  margin-top: 48px; }
-  #forms .form {
-    border-bottom: 1px solid #eaeaea; }
-    #forms .form a {
-      text-decoration: none;
+#map {
+  border: 1px solid #cdcdcd; }
+  #map .sebm-google-map-container {
+    height: 600px; }
+
+#buttons {
+  margin-bottom: 24px; }
+  #buttons > div {
+    font-size: 1.1em;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    margin-right: 20px;
+    padding-right: 8px;
+    cursor: pointer; }
+    #buttons > div.-on {
+      border-bottom: 2px solid #342f81; }
+    #buttons > div:hover {
       color: #342f81; }
-    #forms .form > div {
-      display: inline-block;
-      height: 40px;
-      line-height: 40px; }
-      #forms .form > div.title {
-        width: 890px; }
-        #forms .form > div.title i {
-          opacity: 0.2; }
-        #forms .form > div.title span {
-          opacity: 0.5;
-          margin-left: 12px;
-          font-size: 0.9em;
-          cursor: pointer; }
-          #forms .form > div.title span i {
-            opacity: 1; }
-          #forms .form > div.title span:hover {
-            opacity: 1; }
-      #forms .form > div.uploaded {
-        width: 80px;
-        text-align: right;
-        opacity: 0.5; }
 
-/*# sourceMappingURL=1_6_forms.css.map */
+/*# sourceMappingURL=1_5_maps.css.map */

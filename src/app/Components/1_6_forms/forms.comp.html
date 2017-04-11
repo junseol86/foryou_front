@@ -1,6 +1,10 @@
 <app-top></app-top>
 
 <div id="content" class="on_page_center pos_rel">
+
+  <app-left-wing></app-left-wing>
+  <app-right-wing></app-right-wing>
+
   <div id="sub_menus">
     <div (click)="refresh()">
     <span class="-on">
@@ -8,9 +12,6 @@
     </span>
     </div>
   </div>
-
-  <app-left-wing></app-left-wing>
-  <app-right-wing></app-right-wing>
 
   <div id="for_admin" *ngIf="login_status == LOGGED_IN" class="pos_rel">
     <form>

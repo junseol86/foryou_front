@@ -1,3 +1,177 @@
+div, span {
+  font-family: "Malgun Gothic", Dotum; }
 
+.on_page_center {
+  width: 980px;
+  margin: 0 auto; }
+
+.pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con > .fl_r {
+    float: right; }
+  ._float_con:after {
+    clear: both; }
+
+._c_align {
+  text-align: center; }
+
+._pointer {
+  cursor: pointer; }
+
+#content {
+  border-left: 2px solid #efefef;
+  border-right: 2px solid #efefef;
+  padding: 36px; }
+
+#pages {
+  text-align: center;
+  padding: 40px 100px 0 100px; }
+  #pages > div {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #efefef;
+    border-radius: 15px;
+    margin: 2px;
+    cursor: pointer; }
+    #pages > div:hover {
+      background-color: #efefef; }
+    #pages > div.-on {
+      color: white;
+      background-color: #342f81;
+      border: 0; }
+
+#write_form .input_div {
+  height: 40px;
+  line-height: 40px; }
+  #write_form .input_div label {
+    margin-right: 12px; }
+  #write_form .input_div input {
+    width: 600px;
+    height: 28px;
+    line-height: 28px; }
+  #write_form .input_div span {
+    margin-left: 6px;
+    opacity: 0.5; }
+
+#write_button_container {
+  margin-top: 12px; }
+  #write_button_container > #write_button {
+    float: right;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    cursor: pointer; }
+    #write_button_container > #write_button:hover {
+      border: 1px solid #cdcdcd; }
+
+#detail {
+  padding: 36px; }
+  #detail #title_bar {
+    margin-bottom: 20px; }
+    #detail #title_bar #title {
+      font-weight: bold;
+      font-size: 1.2em; }
+    #detail #title_bar #date {
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      right: 0; }
+  #detail #tags {
+    margin-bottom: 12px; }
+  #detail #detail_content {
+    padding: 36px 0;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea; }
+  #detail #detail_admin {
+    text-align: right;
+    padding-top: 24px; }
+
+.edit_button {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-left: 4px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  cursor: pointer; }
+  .edit_button:hover {
+    border: 1px solid #cdcdcd; }
+  .edit_button i {
+    opacity: 0.5; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.8em;
+  margin: 2px;
+  padding: 4px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6; }
+  .tag:hover {
+    opacity: 1; }
+  .tag i {
+    color: #342f81; }
+
+#search_and_write {
+  margin-top: 12px;
+  font-size: 1.1em;
+  color: #808080;
+  line-height: 24px; }
+  #search_and_write input {
+    border: 1px solid #dedede;
+    height: 24px;
+    outline: none;
+    margin-right: 4px;
+    padding: 0 4px; }
+  #search_and_write i {
+    color: #dedede; }
+  #search_and_write #admin_write {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 0.9em;
+    cursor: pointer; }
+    #search_and_write #admin_write:hover {
+      background-color: #fafafa; }
+  #search_and_write #search_icon {
+    cursor: pointer; }
+
+#image_container {
+  border-bottom: 1px solid #eaeaea; }
+  #image_container img {
+    display: block; }
+
+#articles_container {
+  margin-top: 36px; }
+  #articles_container > div {
+    width: 300px;
+    margin-right: 20px;
+    padding-right: 13px; }
+    #articles_container > div:last-child {
+      margin-right: 0; }
+    #articles_container > div > .title {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #342f81;
+      opacity: 0.9;
+      padding-bottom: 16px; }
+    #articles_container > div .article {
+      padding-left: 8px;
+      line-height: 28px;
+      height: 28px;
+      border-bottom: 1px solid #eaeaea;
+      cursor: pointer; }
+      #articles_container > div .article:hover {
+        text-decoration: underline; }
 
 /*# sourceMappingURL=1_0_dashboard.css.map */

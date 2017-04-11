@@ -18,6 +18,7 @@ import { ManagementConsultingComponent } from './Components/1_2_fields/5_managem
 import { FieldsDetailComponent } from './Components/1_2_fields/fields_detail.comp';
 import { FieldsWriteComponent } from './Components/1_2_fields/fields_write.comp';
 import { FormsComponent } from './Components/1_6_forms/forms.comp';
+import { MapsComponent } from './Components/1_5_directions/maps.comp';
 
 import { MockService} from './Services/mock.service';
 import { MonthlyJournalComponent } from './Components/1_3_tax_info/1_monthly_journal.comp';
@@ -61,6 +62,7 @@ const routes: Routes = [
   { path: 'online_consulting/faq/:page',  component: FaqComponent },
 
   { path: 'forms',  component: FormsComponent },
+  { path: 'direction',  component: MapsComponent },
   ];
 
 @NgModule({

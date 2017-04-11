@@ -18,8 +18,32 @@
     <i class="fa fa-sign-out" aria-hidden="true"></i>
     <span class="button" (click)="logout()">로그아웃</span>
     <i class="fa fa-key" aria-hidden="true"></i>
-    <span class="button" >비밀번호 변경</span>
+    <span class="button" (click)="toChangingPw()">비밀번호 변경</span>
     <i class="fa fa-user-o" aria-hidden="true"></i>
-    <span class="button" >관리자 추가</span>
+    <span class="button" (click)="toAddingAdmin()">관리자 추가</span>
+  </span>
+  <span *ngIf="login_status==CHANGING_PW">
+    <label>현재 비밀번호:</label>
+    <input type="password" #cpv0Input value="{{changePwVals[0]}}" (change)="setChangePwVals(0, cpv0Input.value)">
+    <label>새 비밀번호:</label>
+    <input type="password" #cpv1Input value="{{changePwVals[1]}}" (change)="setChangePwVals(1, cpv1Input.value)">
+    <label>새 비밀번호 확인:</label>
+    <input type="password" #cpv2Input value="{{changePwVals[2]}}" (change)="setChangePwVals(2, cpv2Input.value)">
+    <span class="button" (click)="changePw()">확인</span>
+    <span (click)="toLoggedIn()" class="button">취소</span>
+  </span>
+  <span *ngIf="login_status==ADDING_ADMIN">
+    <label>아이디:</label>
+    <input type="text" maxlength="20" #auv0Input value="{{addUserVals[0]}}" (change)="setAddUserVals(0, auv0Input.value)">
+    <label>이름:</label>
+    <input type="text" maxlength="20" #auv1Input value="{{addUserVals[1]}}" (change)="setAddUserVals(1, auv1Input.value)">
+    <label>직함:</label>
+    <input type="text" maxlength="20" #auv2Input value="{{addUserVals[2]}}" (change)="setAddUserVals(2, auv2Input.value)">
+    <label>비밀번호:</label>
+    <input type="password" #auv3Input value="{{addUserVals[3]}}" (change)="setAddUserVals(3, auv3Input.value)">
+    <label>비밀번호 확인:</label>
+    <input type="password" #auv4Input value="{{addUserVals[4]}}" (change)="setAddUserVals(4, auv4Input.value)">
+    <span class="button" (click)="addAdmin()">확인</span>
+    <span (click)="toLoggedIn()" class="button">취소</span>
   </span>
 </div>

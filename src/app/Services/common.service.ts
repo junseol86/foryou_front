@@ -18,6 +18,14 @@ export  class CommonService {
               private values: ValueService) {
   }
 
+  getDashboardArticles(): Promise<Object> {
+    const url =  this.values.backendAddress + '/dashboard';
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as Object)
+      .catch(this.handleError);
+  }
+
   getDetail(table: string, id: number): Promise<Object> {
     const url =  this.values.backendAddress + `/detail/${table}/${id}`;
     return this.http.get(url)

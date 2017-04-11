@@ -4,6 +4,51 @@
   <app-left-wing></app-left-wing>
   <app-right-wing></app-right-wing>
 
+  <div id="image_container">
+    <img src="/app/Images/interface/dashboard_image.jpg">
+  </div>
+
+  <div id="articles_container" class="_float_con" *ngIf="articles != null">
+    <div>
+      <div class="title">
+        <i class="fa fa-calculator" aria-hidden="true"></i>
+        세무업무
+      </div>
+      <div class="article" *ngFor="let fields of articles['fields']" (click)="toFieldsDetail(fields['fields.id'])">
+        · {{
+        fields['fields.title'].length > 20 ?
+          fields['fields.title'].slice(0, 18) + '...'
+          : fields['fields.title']
+        }}
+      </div>
+    </div>
+    <div>
+      <div class="title">
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+        세무뉴스
+      </div>
+      <div class="article" *ngFor="let tax_news of articles['tax_news']" (click)="toTaxNewsDetail(tax_news['tax_news.id'])">
+        · {{
+        tax_news['tax_news.title'].length > 20 ?
+        tax_news['tax_news.title'].slice(0, 18) + '...'
+        : tax_news['tax_news.title']
+        }}
+      </div>
+    </div>
+    <div>
+      <div class="title">
+        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+        상담의뢰
+      </div>
+      <div class="article" *ngFor="let qna of articles['qna']" (click)="toQnas()">
+        · {{
+        qna['qna.title'].length > 20 ?
+        qna['qna.title'].slice(0, 18) + '...'
+        : qna['qna.title']
+        }}
+      </div>
+    </div>
+  </div>
 
 
   <app-footer></app-footer>
